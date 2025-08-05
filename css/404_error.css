@@ -62,18 +62,22 @@ a {
   text-decoration: none;
   color: white;
 }
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 90px); /* Adjust for navbar height */
+  height: calc(100vh - 90px);
+  /* Adjust for navbar height */
 }
+
 main img {
   display: block;
   margin: 0 auto 0 20px;
   width: 40%;
   height: auto;
 }
+
 main #text {
   padding-left: 5vw;
   width: 40%;
@@ -83,6 +87,7 @@ main #text {
   margin-right: 20px;
   margin-left: 60px;
 }
+
 main button {
   background-color: #1e155a;
   color: white;
@@ -96,19 +101,19 @@ main button {
 
 /* footer */
 footer {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #0c0c1e;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(31, 22, 93, 1) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(31, 22, 93, 1) 100%);
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
 }
+
 footer .container {
   max-width: 800px;
   padding: 40px 20px;
@@ -174,14 +179,16 @@ footer .sub-tagline {
 
 footer .social-icons {
   margin-top: 20px;
-   gap: 5vw;
+  gap: 5vw;
 }
+
 footer .social-icons img {
   /* width: 30px; */
   height: 40px;
   vertical-align: middle;
   margin: 0 1vw;
 }
+
 footer .social-icons a {
   color: white;
   margin: 0 12px;
