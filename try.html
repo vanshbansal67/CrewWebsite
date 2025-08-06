@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects Showcase</title>
+    <title>FAQ and Contact Sections</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -14,383 +14,482 @@
             font-family: 'Arial', sans-serif;
         }
 
-        .projects-section {
-            padding: 80px 0;
+        .faq-section {
+            background: transparent;
+            padding: 40px 20px;
+            margin: 40px 0;
         }
 
-        .section-title {
+        .faq-title {
             text-align: center;
-            margin-bottom: 60px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
             color: white;
         }
 
-        .section-title h2 {
-            font-size: 3rem;
-            font-weight: bold;
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            border: none;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border-radius: 15px !important;
+            overflow: hidden;
+            background: transparent;
         }
 
-        .section-title p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .carousel-container {
+        .accordion-button {
+            background: #1a237e !important;
+            color: white !important;
+            border: none;
+            padding: 20px 30px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-radius: 15px !important;
             position: relative;
-            height: 500px;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: #1a237e !important;
+            color: white !important;
+            box-shadow: none;
+        }
+
+        .accordion-button::after {
+            background-image: none;
+            content: '\002B';
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            perspective: 1200px;
-            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .project-card {
-            position: absolute;
-            width: 300px;
-            height: 400px;
+        .accordion-button:not(.collapsed)::after {
+            content: '\2212';
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .accordion-button:hover {
+            background: #303f9f !important;
+        }
+
+        .accordion-body {
+            background: white;
+            color: #333;
+            padding: 0;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .accordion-collapse {
+            background: white;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .contact-section {
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: transform 0.8s ease, opacity 0.8s ease;
-            /* Smooth transition */
-            transform-style: preserve-3d;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .project-card.center:hover {
-            transform: translateY(-20px) !important;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .project-card.left {
-            transform: translateX(-350px) rotateY(45deg) scale(0.8);
-            z-index: 1;
-            opacity: 0.7;
-        }
-
-        .project-card.center {
-            transform: translateX(0) rotateY(0deg) scale(1);
-            z-index: 3;
-            opacity: 1;
-        }
-
-        .project-card.right {
-            transform: translateX(350px) rotateY(-45deg) scale(0.8);
-            z-index: 1;
-            opacity: 0.7;
-        }
-
-        .project-card.hidden {
-            transform: translateX(0) rotateY(90deg) scale(0.5);
-            opacity: 0;
-            z-index: 0;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 40px 0;
             position: relative;
             overflow: hidden;
         }
 
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
         }
 
-        .card-content {
-            padding: 25px;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: bold;
+        .contact-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
             color: #333;
-            margin-bottom: 10px;
         }
 
-        .project-description {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .tech-tag {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 4px 10px;
+        .contact-info {
+            background: #f8f9fa;
             border-radius: 15px;
-            font-size: 0.7rem;
-            font-weight: 500;
+            padding: 30px;
+            height: 100%;
         }
 
-        .carousel-controls {
+        .contact-item {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .control-btn {
-            width: 60px;
-            height: 60px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
-        .control-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .control-btn:active {
-            transform: scale(0.95);
-        }
-
-        .project-placeholder {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto;
-            margin-top: 50px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
             color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h6 {
+            margin: 0;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .map-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-pin {
+            position: relative;
+            z-index: 2;
+        }
+
+        .map-pin i {
+            font-size: 4rem;
+            color: white;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(102, 126, 234, 0.1);
+            background-image:
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
 
         @media (max-width: 768px) {
-            .project-card {
-                width: 250px;
-                height: 350px;
+
+            .faq-title,
+            .contact-title {
+                font-size: 2rem;
             }
 
-            .project-card.left {
-                transform: translateX(-280px) rotateY(45deg) scale(0.7);
+            .faq-section,
+            .contact-section {
+                padding: 20px;
+                margin: 20px 0;
             }
 
-            .project-card.right {
-                transform: translateX(280px) rotateY(-45deg) scale(0.7);
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .section-title h2 {
-                font-size: 2.5rem;
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
             }
         }
     </style>
 </head>
 
 <body>
-    <section class="projects-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Projects</h2>
-                <p>Showcasing my latest work and creative solutions</p>
-            </div>
+    <!-- FAQ Section -->
+    <div class="container my-5">
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq1">
+                                Q. How Long Does It Take To Build A Website?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <div style="padding: 25px;">
+                                    The time required to build a website depends on its complexity and requirements. A
+                                    simple website typically takes 1-2 weeks, while a complex e-commerce or custom web
+                                    application can take 4-8 weeks or more. We provide detailed timelines during our
+                                    initial consultation based on your specific needs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="carousel-container" id="projectCarousel">
-                <!-- Project cards will be dynamically inserted here -->
-            </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq2">
+                                Q. What Is The Cost Of Website Development?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <div style="padding: 25px;">
+                                    Website development costs vary based on features, design complexity, and
+                                    functionality. Basic websites start from $500-$2000, while custom e-commerce
+                                    solutions range from $3000-$10000+. We offer transparent pricing and detailed quotes
+                                    after understanding your requirements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="carousel-controls">
-                <button class="control-btn" id="prevBtn">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="control-btn" id="nextBtn">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq3">
+                                Q. Will My Website Be Mobile Responsive?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <div style="padding: 25px;">
+                                    Yes, absolutely! All websites we develop are fully responsive and mobile-friendly.
+                                    We ensure your site looks and functions perfectly on all devices - desktops,
+                                    tablets, and smartphones. Mobile responsiveness is standard in all our development
+                                    packages.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq4">
+                                Q. Do You Provide Website Maintenance?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <div style="padding: 25px;">
+                                    Yes, we offer comprehensive website maintenance services including regular updates,
+                                    security monitoring, backup management, performance optimization, and technical
+                                    support. We have various maintenance packages to suit different needs and budgets.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq5">
+                                Q. Is SEO Included In Website Development?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                <div style="padding: 25px;">
+                                    Basic SEO optimization is included in all our website development packages. This
+                                    includes proper meta tags, URL structure, site speed optimization, and mobile
+                                    responsiveness. For advanced SEO services and ongoing optimization, we offer
+                                    separate SEO packages tailored to your marketing goals.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Sample project data - you can replace with your actual projects
-        const projects = [
-            {
-                title: "E-Commerce Platform",
-                description: "A full-stack e-commerce solution with payment integration and admin dashboard.",
-                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-                technologies: ["React", "Node.js", "MongoDB"]
-            },
-            {
-                title: "Task Management App",
-                description: "A collaborative task management application with real-time updates and team features.",
-                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop",
-                technologies: ["Vue.js", "Firebase", "CSS3"]
-            },
-            {
-                title: "Weather Dashboard",
-                description: "A responsive weather application with interactive maps and detailed forecasts.",
-                image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=250&fit=crop",
-                technologies: ["JavaScript", "API", "Chart.js"]
-            },
-            {
-                title: "Portfolio Website",
-                description: "A modern, responsive portfolio website with smooth animations and interactive elements.",
-                image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop",
-                technologies: ["HTML5", "CSS3", "JavaScript"]
-            },
-            {
-                title: "Social Media App",
-                description: "A social networking platform with real-time messaging and media sharing capabilities.",
-                image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop",
-                technologies: ["React Native", "Node.js", "Socket.io"]
-            },
-            {
-                title: "Learning Platform",
-                description: "An online learning management system with video streaming and progress tracking.",
-                image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop",
-                technologies: ["Angular", "Express", "MySQL"]
-            }
-        ];
+        <!-- Get In Touch Section -->
+        <div class="container my-5">
+            <div class="contact-section">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2 class="contact-title">Get In Touch</h2>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h6>Phone Number</h6>
+                                    <p>+91 8273943836</p>
+                                </div>
+                            </div>
 
-        let currentIndex = 0;
-        const carousel = document.getElementById('projectCarousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h6>Email Address</h6>
+                                    <p>Crewtechventure@Gmail.Com</p>
+                                </div>
+                            </div>
 
-        function createProjectCard(project, index) {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.innerHTML = `
-                <div class="card-image">
-                    <div class="project-placeholder">
-                        <i class="fas fa-code"></i>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h6>Office Location</h6>
+                                    <p>Agra, Uttar Pradesh, India</p>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn contact-btn">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Contact Us
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="map-container">
+                            <div class="map-overlay"></div>
+                            <div class="map-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card-content">
-                    <div class="project-title">${project.title}</div>
-                    <div class="project-description">${project.description}</div>
-                    <div class="project-tech">
-                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-                    </div>
-                </div>
-            `;
+            </div>
+        </div>
 
-            // Load image after card is created
-            const img = new Image();
-            img.onload = function () {
-                const imageDiv = card.querySelector('.card-image');
-                imageDiv.innerHTML = `<img src="${project.image}" alt="${project.title}">`;
-            };
-            img.src = project.image;
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Add smooth scrolling and animations
+            document.addEventListener('DOMContentLoaded', function () {
+                // Animate FAQ items on scroll
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
 
-            return card;
-        }
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
 
-        function updateCarousel() {
-            const cards = carousel.children;
+                // Initially hide accordion items
+                document.querySelectorAll('.accordion-item').forEach((item, index) => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(30px)';
+                    item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                    observer.observe(item);
+                });
 
-            // Loop through all projects and update classes dynamically
-            for (let i = 0; i < projects.length; i++) {
-                let card = cards[i];
+                // Contact button click handler
+                document.querySelector('.contact-btn').addEventListener('click', function () {
+                    alert('Thank you for your interest! We will get back to you soon.');
+                });
 
-                // If the card doesn't exist, create it
-                if (!card) {
-                    card = createProjectCard(projects[i], i);
-                    carousel.appendChild(card);
-                }
+                // Add click to call functionality
+                document.querySelector('.contact-item').addEventListener('click', function () {
+                    const phone = this.querySelector('p').textContent;
+                    if (phone.includes('+91')) {
+                        window.open(`tel:${phone}`, '_self');
+                    }
+                });
 
-                // Update classes based on the current index
-                if (i === currentIndex) {
-                    card.className = 'project-card center';
-                } else if (i === (currentIndex - 1 + projects.length) % projects.length) {
-                    card.className = 'project-card left';
-                } else if (i === (currentIndex + 1) % projects.length) {
-                    card.className = 'project-card right';
-                } else {
-                    card.className = 'project-card hidden';
-                }
-            }
-        }
-
-        function nextProject() {
-            currentIndex = (currentIndex + 1) % projects.length;
-            updateCarousel();
-        }
-
-        function prevProject() {
-            currentIndex = (currentIndex - 1 + projects.length) % projects.length;
-            updateCarousel();
-        }
-
-        // Event listeners
-        nextBtn.addEventListener('click', nextProject);
-        prevBtn.addEventListener('click', prevProject);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                prevProject();
-            } else if (e.key === 'ArrowRight') {
-                nextProject();
-            }
-        });
-
-        // Auto-rotate (optional - uncomment to enable)
-        // setInterval(nextProject, 5000);
-        // Auto-rotate cards every 5 seconds
-        setInterval(() => {
-            nextProject();
-        }, 4000); // 5000 milliseconds = 5 seconds
-        // Initialize carousel
-        updateCarousel();
-
-        // Add touch/swipe support for mobile
-        let startX = 0;
-        let endX = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        carousel.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const threshold = 50;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > threshold) {
-                if (diff > 0) {
-                    nextProject();
-                } else {
-                    prevProject();
-                }
-            }
-        }
-
-    </script>
+                // Add click to email functionality
+                document.querySelectorAll('.contact-item')[1].addEventListener('click', function () {
+                    const email = this.querySelector('p').textContent;
+                    window.open(`mailto:${email}`, '_self');
+                });
+            });
+        </script>
 </body>
 
 </html>
