@@ -101,12 +101,7 @@ a {
   padding-top: 2px;
 }
 
-/* our recent work */
-/* body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-} */
+
 #home3 {
   min-height: 100vh;
   font-family: "Arial", sans-serif;
@@ -306,7 +301,7 @@ a {
 
 /* home 4  */
 #home4 {
-  background-image: url(/images/experience.png);
+  background-image: url(../images/experience.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -321,11 +316,9 @@ footer {
   justify-content: center;
   align-items: center;
   background: #0c0c1e;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(31, 22, 93, 1) 100%
-  );
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(31, 22, 93, 1) 100%);
   color: white;
   text-align: center;
   /* padding: 40px 20px; */
@@ -469,29 +462,7 @@ footer .social-icons a:hover {
 }
 
 .service-card {
-<<<<<<< HEAD
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    overflow: hidden;
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15),
-        0 1px 8px rgba(0, 0, 0, 0.1);
-    /* animation: fadeInUp 1s ease-out; */
-    /* animation-fill-mode: both; */
-=======
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.7)
-  );
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -502,10 +473,28 @@ footer .social-icons a:hover {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease-out;
-  animation-fill-mode: both;
->>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 1px 8px rgba(0, 0, 0, 0.1);
+  /* animation: fadeInUp 1s ease-out; */
+  /* animation-fill-mode: both; */
+  /* background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1); */
+  /* animation: fadeInUp 1s ease-out;
+  animation-fill-mode: both; */
+
 }
 
 
@@ -528,12 +517,10 @@ footer .social-icons a:hover {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(102, 126, 234, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(102, 126, 234, 0.2),
+      transparent);
   transition: left 0.6s;
 }
 
@@ -543,11 +530,9 @@ footer .social-icons a:hover {
 
 .service-card:hover {
   transform: translateY(-20px) rotateX(8deg) rotateY(8deg) scale(1.02);
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 0.85)
-  );
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.85));
   border: 1px solid rgba(102, 126, 234, 0.3);
   box-shadow: 0 30px 60px rgba(102, 126, 234, 0.25),
     0 15px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -561,12 +546,11 @@ footer .social-icons a:hover {
   transition: all 0.4s ease;
 }
 
+
 .service-card:hover .icon-container {
-<<<<<<< HEAD
-    transform: scale(1.1) rotateZ(60deg);
-=======
+  transform: scale(1.1) rotateZ(60deg);
   transform: scale(1.1) rotateZ(360deg);
->>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
+
 }
 
 .icon {
@@ -619,7 +603,7 @@ footer .social-icons a:hover {
   color: #444;
 }
 
-.floating-elements {
+/* .floating-elements {
   position: fixed;
   top: 0;
   left: 0;
@@ -627,9 +611,9 @@ footer .social-icons a:hover {
   height: 100%;
   pointer-events: none;
   z-index: -1;
-}
+} */
 
-.floating-circle {
+/* .floating-circle {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
@@ -658,7 +642,7 @@ footer .social-icons a:hover {
   bottom: 20%;
   left: 20%;
   animation-delay: 4s;
-}
+} */
 
 @keyframes fadeInDown {
   from {
@@ -705,6 +689,7 @@ footer .social-icons a:hover {
 }
 
 @keyframes pulse-glow {
+
   0%,
   100% {
     opacity: 0.3;
@@ -716,14 +701,7 @@ footer .social-icons a:hover {
     transform: scale(1.02);
   }
 
-  0%,
-  100% {
-    transform: translateY(0px) rotate(0deg);
-  }
 
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
 }
 
 @media (max-width: 768px) {
@@ -950,30 +928,21 @@ footer .social-icons a:hover {
 }
 
 /* FAQ section */
-<<<<<<< HEAD
 
-=======
-body {
-  font-family: "Arial", sans-serif;
-}
->>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 
 #home6 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  padding:1rem;
+  padding: 1rem;
 }
 
 .faq-section {
-<<<<<<< HEAD
-    background: transparent;
-    padding: 40px 20px;
-    /* margin: 40px 0; */
-=======
+  background: transparent;
+  padding: 40px 20px;
+  /* margin: 40px 0; */
   background: transparent;
   padding: 40px 20px;
   margin: 40px 0;
->>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 }
 
 .faq-title {
@@ -1059,23 +1028,13 @@ body {
 }
 
 .contact-section {
-<<<<<<< HEAD
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    /* margin: 40px 0; */
-    position: relative;
-    overflow: hidden;
-=======
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  margin: 40px 0;
   position: relative;
   overflow: hidden;
->>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
+
 }
 
 .contact-section::before {
@@ -1190,6 +1149,7 @@ body {
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -1214,20 +1174,17 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(102, 126, 234, 0.1);
-  background-image: radial-gradient(
-      circle at 25% 25%,
+  background-image: radial-gradient(circle at 25% 25%,
       rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
-    radial-gradient(
-      circle at 75% 75%,
+      transparent 1px),
+    radial-gradient(circle at 75% 75%,
       rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    );
+      transparent 1px);
   background-size: 50px 50px;
 }
 
 @media (max-width: 768px) {
+
   .faq-title,
   .contact-title {
     font-size: 2rem;

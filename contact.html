@@ -17,13 +17,13 @@
         <div id="navbarImplement"></div>
 
         <div id="hero-text">
-            <br>
+
             <h1>Contact Us</h1>
-            <br>
+
             <p>Looking for your digital partner?</p>
             <p id="we">We are here....</p>
             <br>
-            <div class="social-icons">
+            <div class="social-icons d-flex justify-content-start">
                 <a href="https://www.instagram.com/crewtechventure?igsh=MW5hM2c5djh0Y2t3bA==" target="_blank"><img
                         src="./images/instagram icon.png" alt="Instagram"></a>
                 <a href="https://www.facebook.com/profile.php?id=61574957493164" target="_blank"><img
@@ -34,52 +34,126 @@
                 <a href="https://github.com/techventurecrew" target="_blank"><img src="./images/GitHub.png"
                         alt="GitHub"></a>
             </div>
+        </div>
     </header>
     <main>
-        <div id="main_content">
-            <span id="text">
-                <section class="next-steps">
-                    <h2>What will be next step?</h2>
-                    <div class="cards">
-                        <div class="card">
-                            <h3>We’ll prepare a proposal</h3>
-                            <p>Required scope, timeline and apr. price will be included if you provide us with detail
-                                information about a project</p>
-                        </div>
-                        <div class="card">
-                            <h3>Together we discuss it</h3>
-                            <p>Let’s get acquainted and discuss all the possible variants and options. Google Hangouts
-                                or Skype usually works great</p>
-                        </div>
-                        <div class="card">
-                            <h3>Let’s start building</h3>
-                            <p>When the contract is signed and all goals are set we can start the first sprint.</p>
-                        </div>
+        <!-- Add form container here, right after hero-text -->
+        <div id="contact-form-wrapper" class="form-container">
+            <div class="form-header">
+                <h3>Write us a few words about your project and we will prepare a proposal for
+                    you
+                    within 24
+                    hours.</h3>
+            </div>
+
+            <form id="proposalForm">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control" placeholder="Name" required>
                     </div>
-                </section>
-            </span>
-            <span class="contact-form">
-                <h2>Contact Form</h2>
-                <form action="">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Company Name">
-                    <input type="text" placeholder="Your Budget">
-                    <textarea placeholder="Project details" rows="5"></textarea>
-                    <input type="file">
-                    <button type="submit">Send</button>
-                </form>
-                <p class="note">Drop your project details in PDF/DOCS format if you have.</p>
-                <p class="email">You can directly contact us at <strong>crewtechventure@gmail.com</strong> for more
-                    details.</p>
-            </span>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="E mail" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Company Name">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Your Budget">
+                    </div>
+                </div>
+
+                <div class="optional-label">Optional</div>
+
+                <div class="mb-4">
+                    <textarea class="form-control" rows="5" placeholder="Project details"></textarea>
+                </div>
+
+                <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+                    <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx" multiple>
+                    <div class="file-upload-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="file-upload-text">
+                        drop your project details in<br>pdf/docs format if you have.
+                    </div>
+                </div>
+
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <div class="contact-info2">
+                You can directly contact us at <a href="mailto:crewtechventure@gmail.com">crewtechventure@gmail.com</a>
+                for more details.
+            </div>
+
         </div>
     </main>
+
+    <section id="contact" class="d-flex justify-content-start align-items-start">
+        <div class="cosmic-content-container">
+            <h1 class="galaxy-heading-primary">What will be next step?</h1>
+            <p class="aurora-subtitle-text fs-4">You are one step closer to build your
+                perfect
+                product</p>
+
+            <div class="meteor-step-item">
+                <div class="quasar-step-indicator">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="pulsar-step-content">
+                    <h3 class="fw-bold">1. We'll prepare a proposal</h3>
+                    <p class="fs-5">Required scope, timeline and apr. price will be included
+                        if
+                        you
+                        provide
+                        us with
+                        detail information about a project.</p>
+                </div>
+            </div>
+
+            <div class="meteor-step-item">
+                <div class="quasar-step-indicator">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="pulsar-step-content">
+                    <h3 class="fw-bold">2. Together we discuss it</h3>
+                    <p class="fs-5">Let's get acquainted and discuss all the possible
+                        variants
+                        and
+                        options.
+                        Google
+                        Hangouts or Skype usually works great.</p>
+                </div>
+            </div>
+
+            <div class="meteor-step-item">
+                <div class="quasar-step-indicator">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="pulsar-step-content">
+                    <h3 class="fw-bold">3. Let's start building</h3>
+                    <p class="fs-5">When the contract is signed and all goals are set we can
+                        start
+                        the first
+                        sprint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <section>
         <div id="footerImplement"></div>
     </section>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="./js/contact.js" defer></script>
+
     <script src="./js/main.js"></script>
 
 </body>
