@@ -1,27 +1,35 @@
 * {
-  height: auto;
-  width: auto;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden; */
 }
 
 html,
 body {
   overflow-x: hidden;
   background-color: white;
+  font-family: sans-serif;
 }
+<<<<<<< HEAD
 
 #hero_section {
   background: #1F165D;
   background: linear-gradient(0deg, rgba(31, 22, 93, 1) 0%, rgba(12, 12, 30, 1) 100%);
   height: 80vh;
+=======
+>>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 
+/* Hero Section */
+#hero_section {
+  background: linear-gradient(0deg, #1F165D 0%, #0C0C1E 100%);
+  padding: 1rem;
+  color: white;
 }
 
 #hero_section {
   overflow: hidden;
   height: 100vh;
+<<<<<<< HEAD
   width: 100vw;
   background-image: url(../images/second_background.png);
   background-position: center;
@@ -31,11 +39,50 @@ body {
   /* background-color: rgb(235, 235, 235); */
 }
 
+=======
+  width: 100%;
+  background-image: url(../images/home-background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ebebeb;
+}
+
+/* Navbar */
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  padding: 0 5%;
+}
+>>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 
 
 
+<<<<<<< HEAD
 
 
+=======
+#nav-links ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#nav-links ul li {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Text */
+>>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 #hero-text {
   color: white;
   font-size: 2rem;
@@ -47,35 +94,46 @@ body {
   color: #52CFFF;
 }
 
+<<<<<<< HEAD
+=======
+/* Social Icons */
+>>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 .social-icons {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  gap: 5vw;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .social-icons img {
-  /* width: 30px; */
   height: 40px;
-  vertical-align: middle;
   margin: 0 1vw;
 }
 
-/* main */
+/* Main Content */
 #main_content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   height: auto
     /* Adjust for navbar height */
+=======
+  padding: 2rem;
+>>>>>>> 2574257c4c69fbb748d4a0033d1df9c6d08cc234
 }
 
 #main_content #text {
-  display: block;
-  margin: 4vw 4vw 4vw 8vw;
-  width: 40%;
-  height: auto;
+  flex: 1;
+  margin: 2rem;
+  min-width: 300px;
+  max-width: 600px;
   border-radius: 5%;
 }
 
+/* Next Steps Section */
 .next-steps {
   padding: 40px 20px;
   background-color: #ffffff;
@@ -96,11 +154,12 @@ body {
 }
 
 .card {
-  width: auto;
+  flex: 1 1 280px;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background: #f9f9f9;
+  max-width: 400px;
 }
 
 .card h3 {
@@ -108,15 +167,16 @@ body {
   color: #1E155A;
 }
 
+/* Contact Form */
 .contact-form {
   padding: 40px 20px;
   background-color: #f0f0f0;
   text-align: center;
-  margin: 4vw 8vw 4vw 4vw;
+  margin: 4vw 8vw;
 }
 
 .contact-form h2 {
-  font-size: 24px;
+  font-size: 1.8rem;
   margin-bottom: 10px;
   color: #1E155A;
 }
@@ -157,6 +217,168 @@ body {
   font-size: 14px;
 }
 
+/* Footer */
+footer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #000 0%, #1F165D 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer .container {
+  max-width: 800px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer .logo {
+  height: 8vw;
+  max-height: 60px;
+}
+
+footer .brand {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+footer .brand .highlight {
+  color: #3dcaff;
+}
+
+footer .tagline {
+  margin: 15px 0;
+  font-size: 1.125rem;
+  color: #ccc;
+}
+
+footer .search-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+footer .search-box input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  outline: none;
+  color: #000;
+  max-width: 300px;
+}
+
+footer .search-box button {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #3dcaff, #74e0ff);
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+footer .sub-tagline {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+footer .social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+footer .social-icons img {
+  height: 40px;
+  margin: 0 1vw;
+}
+
+footer .social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: #3dcaff;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.footer-nav a {
+  color: white;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #3dcaff;
+}
+
+copyright {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  #nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  #hero-text {
+    font-size: 1.5rem;
+    margin: 4vw;
+  }
+
+  #main_content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .next-steps h2 {
+    font-size: 2rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .contact-form {
+    margin: 4vw 4vw;
+  }}
+
+ 
 /* footer */
 footer {
   height: 100vh;
@@ -173,19 +395,22 @@ footer {
 }
 
 footer .container {
-  max-width: 800px;
-  padding: 40px 20px;
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 footer .logo {
-  /* width: 60px; */
   height: 8vw;
+  max-height: 60px;
 }
 
 footer .brand {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -195,31 +420,33 @@ footer .brand .highlight {
 }
 
 footer .tagline {
-  margin: 15px 0;
-  font-size: 18px;
+  margin: 1rem 0;
+  font-size: 1.125rem;
   color: #ccc;
 }
 
 footer .search-box {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
   padding: 1vw;
+  width: 100%;
+  max-width: 600px;
 }
 
 footer .search-box input {
+  flex: 1;
+  min-width: 200px;
   padding: 12px 20px;
   border: none;
   border-radius: 25px 0 0 25px;
-  width: 60%;
-  max-width: 50vw;
-  font-size: 14px;
+  font-size: 1rem;
   outline: none;
   color: #000;
 }
 
 footer .search-box button {
-  /* margin: auto; */
   padding: 12px 24px;
   background: linear-gradient(to right, #3dcaff, #74e0ff);
   border: none;
@@ -231,26 +458,27 @@ footer .search-box button {
 
 footer .sub-tagline {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #ccc;
 }
 
 footer .social-icons {
-  margin-top: 20px;
-  gap: 5vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 footer .social-icons img {
-  /* width: 30px; */
   height: 40px;
-  vertical-align: middle;
   margin: 0 1vw;
 }
 
 footer .social-icons a {
   color: white;
-  margin: 0 12px;
-  font-size: 20px;
+  margin: 0 0.75rem;
+  font-size: 1.25rem;
   transition: color 0.3s;
 }
 
@@ -262,13 +490,13 @@ footer .social-icons a:hover {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2vw;
-  margin-top: 20px;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .footer-nav a {
   color: white;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -277,8 +505,30 @@ footer .social-icons a:hover {
   color: #3dcaff;
 }
 
-copyright {
-  margin-top: 20px;
-  font-size: 13px;
-  color: #888;
+/* Responsive Tweaks for Mobile */
+@media (max-width: 600px){
+  footer .logo {
+    height: 12vw;
+  }
+
+  footer .brand {
+    font-size: 1.5rem;
+  }
+
+  footer .tagline,
+  footer .sub-tagline {
+    font-size: 1rem;
+  }
+
+  footer .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  footer .search-box input,
+  footer .search-box button {
+    border-radius: 25px;
+    width: 100%;
+    margin: 5px 0;
+  }
 }

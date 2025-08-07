@@ -207,36 +207,28 @@
             z-index: 2;
         }
 
-        .sirius-submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.02);
+            }
         }
 
-        .phoenix-divider-text {
-            color: white;
-            text-align: center;
-            font-weight: 500;
-            margin: 20px 0;
-            position: relative;
-            z-index: 2;
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
         }
 
-        .draco-contact-info {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 2;
+        50% {
+            transform: translateY(-20px) rotate(180deg);
         }
-
-        .draco-contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .draco-contact-info a:hover {
-            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
