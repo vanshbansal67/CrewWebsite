@@ -485,9 +485,10 @@ footer .social-icons a:hover {
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.15),
         0 1px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 1s ease-out;
-    animation-fill-mode: both;
+    /* animation: fadeInUp 1s ease-out; */
+    /* animation-fill-mode: both; */
 }
+
 
 .service-card:nth-child(1) {
     animation-delay: 0.2s;
@@ -535,7 +536,7 @@ footer .social-icons a:hover {
 }
 
 .service-card:hover .icon-container {
-    transform: scale(1.1) rotateZ(360deg);
+    transform: scale(1.1) rotateZ(60deg);
 }
 
 .icon {
@@ -924,10 +925,7 @@ footer .social-icons a:hover {
 }
 
 /* FAQ section */
-body {
 
-    font-family: 'Arial', sans-serif;
-}
 
 #home6 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -937,7 +935,7 @@ body {
 .faq-section {
     background: transparent;
     padding: 40px 20px;
-    margin: 40px 0;
+    /* margin: 40px 0; */
 }
 
 .faq-title {
@@ -1027,7 +1025,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    margin: 40px 0;
+    /* margin: 40px 0; */
     position: relative;
     overflow: hidden;
 }
