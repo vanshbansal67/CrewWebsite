@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error("Error loading navbar:", error));
     } else {
-        console.error("Footer element not found!");
+        console.error("Navbar element not found!");
     }
 
     // Initialize carousel
