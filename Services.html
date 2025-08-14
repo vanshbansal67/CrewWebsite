@@ -14,43 +14,7 @@
 </head>
 
 <body>
-    <!-- Navigation -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="fas fa-atom logo-icon me-2"></i>
-                CREWTECH
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#solutions">Solutions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
+
     <!-- Hero Section -->
     <section id="services-page-1">
         <div id="navbarImplement"></div>
@@ -165,17 +129,116 @@
             <div class=" fs-1 text-center pt-5">Interested to Work with us?</div>
             <div class="text-center fs-4">Send a line here get an update daily</div>
             <div class="d-flex justify-content-center align-items-center pt-3">
-                <button class="text-center btn btn-primary">Let's Do It</button>
+                <button class="text-center btn btn-primary my-4">Let's Do It</button>
             </div>
         </div>
     </section>
+    <!-- <section id="services-page-3">
+        <div class="fs-1 text-center fw-bold py-4">Why choose us?</div>
+        <div class="ms-5">
+            <ol class="fs-3 ms-5">
+                <li>Expert Software Developers</li>
+                <li>Customized Solutions</li>
+                <li>Agile Development Process</li>
+                <li>Transparent Communication</li>
+                <li>Ent-to-End Service</li>
+                <li>Focus on Security and Performance</li>
+                <li>Long-Term Partnership</li>
+            </ol>
+        </div>
+    </section> -->
+    <div class="services-page-3">
+        <div class="section-title">
+            <h2>Why Choose Us?</h2>
+            <p class="section-subtitle">Discover what makes us the perfect partner for your next project</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card floating">
+                <div class="feature-number">1</div>
+                <div class="feature-icon">💻</div>
+                <h3 class="feature-title">Expert Software Developers</h3>
+                <p class="feature-description">Our team of seasoned developers brings years of experience and
+                    cutting-edge expertise to every project, ensuring top-quality solutions.</p>
+            </div>
+
+            <div class="feature-card floating">
+                <div class="feature-number">2</div>
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Customized Solutions</h3>
+                <p class="feature-description">We don't believe in one-size-fits-all. Every solution is tailored
+                    specifically to meet your unique business needs and goals.</p>
+            </div>
+
+
+
+            <div class="feature-card floating">
+                <div class="feature-number">3</div>
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">Transparent Communication</h3>
+                <p class="feature-description">Stay informed every step of the way with clear, honest communication and
+                    regular project updates.</p>
+            </div>
+
+            <div class="feature-card floating">
+                <div class="feature-number">4</div>
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">End-to-End Service</h3>
+                <p class="feature-description">From initial concept to deployment and maintenance, we provide
+                    comprehensive solutions throughout the entire project lifecycle.</p>
+            </div>
+
+            <div class="feature-card floating">
+                <div class="feature-number">5</div>
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Security & Performance Focus</h3>
+                <p class="feature-description">Built with security-first mindset and optimized for peak performance,
+                    ensuring your applications are fast, secure, and reliable.</p>
+            </div>
+
+            <div class="feature-card floating">
+                <div class="feature-number">6</div>
+                <div class="feature-icon">🤝</div>
+                <h3 class="feature-title">Long-Term Partnership</h3>
+                <p class="feature-description">We're not just vendors, we're partners invested in your success. Building
+                    lasting relationships that grow with your business.</p>
+            </div>
+        </div>
+    </div>
+
     <section id="footerImplement"></section>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom JavaScript -->
+    <script>
+        // Add interactive hover effects
+        const cards = document.querySelectorAll('.feature-card');
 
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-15px) scale(1.03)';
+                this.style.zIndex = '10';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.zIndex = '1';
+            });
+        });
+
+        // Add subtle parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const cards = document.querySelectorAll('.feature-card');
+
+            cards.forEach((card, index) => {
+                const speed = 0.1 + (index * 0.02);
+                card.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
     <script src="./js/main.js"></script>
 </body>
 

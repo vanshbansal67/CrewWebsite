@@ -4,208 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects - Tech Solutions Hub</title>
+    <title>CrewTech - Empowering Businesses</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CrewWebsite/css/style.css">
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
-            --dark-color: #1f2937;
-            --light-gray: #f8fafc;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-        }
-
-        .navbar {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .projects-carousel {
-            padding: 4rem 0;
-            background: var(--light-gray);
-        }
-
-        .carousel-item {
-            padding: 2rem 0;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 0 15px;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            height: 250px;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-title {
-            color: var(--dark-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            margin: 1rem 0;
-        }
-
-        .tech-badge {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 0.2rem;
-            display: inline-block;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
-        }
-
-        .carousel-control-next {
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
-        }
-
-        .carousel-indicators {
-            bottom: -50px;
-        }
-
-        .carousel-indicators button {
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-        }
-
-        .footer {
-            background: var(--dark-color);
-            color: white;
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-section h5 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--accent-color);
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-            transition: background 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--accent-color);
-            color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            color: var(--dark-color);
-            font-weight: bold;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 1rem;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
-        }
     </style>
 </head>
 
+
 <body>
     <!-- Navbar -->
-    <div id="navbarImplement"></div>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <section id="" class="hero-section-project">
+        <div id="navbarImplement"></div>
         <div class="hero-content">
             <div class="container">
                 <div class="row">
@@ -238,7 +52,7 @@
 
     <!-- Projects Carousel Section - Single Project Per Slide -->
     <section id="projects" class="projects-carousel">
-        <div class="container">
+        <div class="mx-5">
             <div class="section-title">
                 <h2>Featured Projects</h2>
                 <p class="text-muted">Explore our latest work across various technology domains</p>
@@ -262,8 +76,8 @@
                     <!-- Slide 1 - E-Commerce Mobile App -->
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-mobile-alt"></i>
                                     </div>
@@ -285,8 +99,8 @@
                     <!-- Slide 2 - Business Analytics Dashboard -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-chart-line"></i>
                                     </div>
@@ -308,8 +122,8 @@
                     <!-- Slide 3 - Learning Management System -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
@@ -331,8 +145,8 @@
                     <!-- Slide 4 - Brand Identity Package -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-palette"></i>
                                     </div>
@@ -354,8 +168,8 @@
                     <!-- Slide 5 - SEO Optimization Campaign -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -377,8 +191,8 @@
                     <!-- Slide 6 - Social Media Campaign -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-camera"></i>
                                     </div>
@@ -400,8 +214,8 @@
                     <!-- Slide 7 - Cloud Migration Project -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-cloud"></i>
                                     </div>
@@ -423,8 +237,8 @@
                     <!-- Slide 8 - Security Implementation -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-shield-alt"></i>
                                     </div>
@@ -446,8 +260,8 @@
                     <!-- Slide 9 - Performance Optimization -->
                     <div class="carousel-item">
                         <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-5">
-                                <div class="project-card">
+                            <div class="">
+                                <div class="project-card-2">
                                     <div class="project-image">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </div>
@@ -480,12 +294,13 @@
         </div>
     </section>
     <div id="footerImplement"></div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        <!-- Bootstrap JavaScript -->
+
         // Smooth scrolling for navigation links
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -509,6 +324,8 @@
             }
         });
     </script>
+    <script src="./js/main.js"></script>
+
 </body>
 
 </html>
