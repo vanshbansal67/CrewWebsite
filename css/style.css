@@ -1662,8 +1662,8 @@ footer .social-icons a:hover {
   display: inline-block;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel-control-prev:not(.project-carousel-2),
+.carousel-control-next:not(.project-carousel-2) {
   width: 10%;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 }
@@ -1706,4 +1706,9 @@ footer .social-icons a:hover {
   height: 8px;
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   border-radius: 2px;
+}
+
+.project-carousel-2 {
+  width: 5%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 }
