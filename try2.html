@@ -4,576 +4,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>try 2</title>
+    <title>Our Projects - Tech Solutions Hub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --dark-color: #1f2937;
+            --light-gray: #f8fafc;
+        }
+
         body {
-            /* background: linear-gradient(135deg, #4fc3f7, #29b6f6); */
-            min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
         }
 
-        .form-container {
-            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            margin: 50px auto;
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
         }
 
-        .form-header {
-            color: white;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 300;
-            line-height: 1.4;
-        }
-
-        .form-header h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: 15px;
-            padding: 15px 20px;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-control:focus {
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border: none;
-            outline: none;
-        }
-
-        .form-control::placeholder {
-            color: #999;
-            font-weight: 400;
-        }
-
-        .optional-label {
-            color: #2c3e50;
-            font-size: 2rem;
-            font-weight: 600;
-            margin: 30px 0 20px 0;
-            text-align: left;
-        }
-
-        .file-upload-area {
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px dashed #ddd;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .file-upload-area:hover {
-            border-color: #4fc3f7;
-            background: white;
-        }
-
-        .file-upload-icon {
-            color: #4fc3f7;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .file-upload-text {
-            color: #666;
-            font-size: 16px;
-        }
-
-        .file-input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .send-btn {
-            background: #2c3e50;
-            color: white;
-            border: none;
-            border-radius: 15px;
-            padding: 15px 40px;
-            font-size: 18px;
-            font-weight: 500;
-            width: 100%;
-            margin: 30px 0;
-            transition: all 0.3s ease;
-            text-transform: lowercase;
-        }
-
-        .send-btn:hover {
-            background: #34495e;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
-        }
-
-        .divider {
-            color: white;
+        .navbar-brand {
+            font-weight: bold;
             font-size: 1.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin: 20px 0;
         }
 
-        .contact-info {
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            text-align: center;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .contact-info a {
-            color: #2c3e50;
-            text-decoration: underline;
-            font-weight: 500;
-        }
-
-        .contact-info a:hover {
-            color: #34495e;
-        }
-
-        /* .row .col-md-6 {
-            margin-bottom: 20px;
-        } */
-
-        @media (max-width: 768px) {
-            .form-container {
-                margin: 20px;
-                padding: 30px 20px;
-            }
-
-            .form-header h2 {
-                font-size: 1.5rem;
-            }
-
-            .optional-label {
-                font-size: 1.5rem;
-            }
-        }
-
-        .stellar-main-wrapper {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .cosmic-content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .nebula-process-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin-right: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .galaxy-heading-primary {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            line-height: 1.2;
-        }
-
-        .aurora-subtitle-text {
-            font-size: 1.1rem;
-            color: #5a6c7d;
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
-
-        .meteor-step-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 35px;
-            position: relative;
-        }
-
-        .quasar-step-indicator {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-
-        .quasar-step-indicator::after {
-            content: '';
-            position: absolute;
-            left: 19px;
-            top: 40px;
-            width: 2px;
-            height: 60px;
-            background: linear-gradient(to bottom, #ff6b6b, transparent);
-        }
-
-        .meteor-step-item:last-child .quasar-step-indicator::after {
-            display: none;
-        }
-
-        .quasar-step-indicator i {
-            color: white;
-            font-size: 18px;
-        }
-
-        .pulsar-step-content h4 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .pulsar-step-content p {
-            color: #5a6c7d;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .constellation-form-panel {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 25px;
-            padding: 45px;
-            box-shadow: 0 25px 50px rgba(79, 172, 254, 0.3);
+            padding: 4rem 0;
             position: relative;
             overflow: hidden;
         }
 
-        .constellation-form-panel::before {
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            opacity: 0.5;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+            background-size: cover;
         }
 
-        .orion-input-field {
-            border: none;
-            border-radius: 15px;
-            padding: 15px 20px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        .hero-content {
             position: relative;
             z-index: 2;
         }
 
-        .orion-input-field:focus {
-            outline: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
+        .projects-carousel {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .carousel-item {
+            padding: 2rem 0;
+        }
+
+        .project-card {
             background: white;
-        }
-
-        .orion-input-field::placeholder {
-            color: #a0a8b0;
-        }
-
-        .vega-textarea-field {
-            border: none;
             border-radius: 15px;
-            padding: 20px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            resize: vertical;
-            min-height: 120px;
-            position: relative;
-            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 15px;
         }
 
-        .vega-textarea-field:focus {
-            outline: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
-            background: white;
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .vega-textarea-field::placeholder {
-            color: #a0a8b0;
-        }
-
-        .andromeda-section-label {
+        .project-image {
+            height: 250px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
+            font-size: 3rem;
         }
 
-        .centauri-upload-zone {
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 30px;
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            color: var(--dark-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            margin: 1rem 0;
+        }
+
+        .tech-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.2rem;
+            display: inline-block;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+        .carousel-control-next {
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+        }
+
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-section h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
             text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            z-index: 2;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background 0.3s ease;
         }
 
-        .centauri-upload-zone:hover {
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .sirius-submit-button {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border: none;
-            border-radius: 15px;
-            padding: 15px 0;
-            font-size: 1.1rem;
-            font-weight: 600;
+        .social-links a:hover {
+            background: var(--accent-color);
             color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            transition: all 0.3s ease;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: var(--dark-color);
+            font-weight: bold;
             position: relative;
-            z-index: 2;
+            display: inline-block;
+            padding-bottom: 1rem;
         }
 
-        @keyframes pulse-glow {
-
-            0%,
-            100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.8;
-                transform: scale(1.02);
-            }
-        }
-
-
-
-        @media (max-width: 768px) {
-            .cosmic-content-container {
-                padding: 30px 15px;
-            }
-
-            .nebula-process-section {
-                margin-right: 0;
-                margin-bottom: 30px;
-                padding: 30px 25px;
-            }
-
-            .constellation-form-panel {
-                padding: 30px 25px;
-            }
-
-            .galaxy-heading-primary {
-                font-size: 2.2rem;
-            }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
         }
     </style>
 </head>
 
 <body>
-    <div class="stellar-main-wrapper">
-        <div class="cosmic-content-container">
-            <div class="row align-items-start">
-                <!-- Process Steps Section -->
-                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                    <div class="nebula-process-section">
-                        <h1 class="galaxy-heading-primary">What will be next step?</h1>
-                        <p class="aurora-subtitle-text">You are one step closer to build your perfect product</p>
+    <!-- Navbar -->
+    <div id="navbarImplement"></div>
 
-                        <div class="meteor-step-item">
-                            <div class="quasar-step-indicator">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <div class="pulsar-step-content">
-                                <h4>1. We'll prepare a proposal</h4>
-                                <p>Required scope, timeline and apr. price will be included if you provide us with
-                                    detail information about a project.</p>
-                            </div>
-                        </div>
-
-                        <div class="meteor-step-item">
-                            <div class="quasar-step-indicator">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <div class="pulsar-step-content">
-                                <h4>2. Together we discuss it</h4>
-                                <p>Let's get acquainted and discuss all the possible variants and options. Google
-                                    Hangouts or Skype usually works great.</p>
-                            </div>
-                        </div>
-
-                        <div class="meteor-step-item">
-                            <div class="quasar-step-indicator">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="pulsar-step-content">
-                                <h4>3. Let's start building</h4>
-                                <p>When the contract is signed and all goals are set we can start the first sprint.</p>
-                            </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-4 fw-bold mb-4">Our Amazing Projects</h1>
+                        <p class="lead mb-4">
+                            Discover our portfolio of cutting-edge solutions in software development,
+                            graphic design, SEO optimization, and hosting services. Each project represents
+                            our commitment to excellence and innovation.
+                        </p>
+                        <div class="d-flex justify-content-center gap-3">
+                            <span class="badge bg-light text-dark p-2">
+                                <i class="fas fa-laptop-code me-2"></i>Software Development
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                <i class="fas fa-paint-brush me-2"></i>Graphic Design
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                <i class="fas fa-search me-2"></i>SEO Services
+                            </span>
+                            <span class="badge bg-light text-dark p-2">
+                                <i class="fas fa-server me-2"></i>Hosting Solutions
+                            </span>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-        <!-- Contact Form Section -->
+    </section>
+
+    <!-- Projects Carousel Section - Single Project Per Slide -->
+    <section id="projects" class="projects-carousel">
         <div class="container">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2>Write us a few words about your project and we will prepare a proposal for you within 24
-                        hours.</h2>
+            <div class="section-title">
+                <h2>Featured Projects</h2>
+                <p class="text-muted">Explore our latest work across various technology domains</p>
+            </div>
+
+            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="6"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="7"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="8"></button>
                 </div>
 
-                <form id="proposalForm">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Name" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control" placeholder="E mail" required>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Company Name">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Your Budget">
-                        </div>
-                    </div>
-
-                    <div class="optional-label">Optional</div>
-
-                    <div class="mb-4">
-                        <textarea class="form-control" rows="5" placeholder="Project details"></textarea>
-                    </div>
-
-                    <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
-                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx" multiple>
-                        <div class="file-upload-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <div class="file-upload-text">
-                            drop your project details in<br>pdf/docs format if you have.
+                <div class="carousel-inner">
+                    <!-- Slide 1 - E-Commerce Mobile App -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">E-Commerce Mobile App</h4>
+                                        <p class="text-muted">A comprehensive mobile application for online shopping
+                                            with advanced features like AR product preview and AI recommendations.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">React Native</span>
+                                            <span class="tech-badge">Node.js</span>
+                                            <span class="tech-badge">MongoDB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <button type="submit" class="send-btn">send</button>
-                </form>
+                    <!-- Slide 2 - Business Analytics Dashboard -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Business Analytics Dashboard</h4>
+                                        <p class="text-muted">Real-time business intelligence platform with interactive
+                                            charts, KPI tracking, and automated reporting features.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">React</span>
+                                            <span class="tech-badge">Python</span>
+                                            <span class="tech-badge">PostgreSQL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="divider">OR</div>
+                    <!-- Slide 3 - Learning Management System -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Learning Management System</h4>
+                                        <p class="text-muted">Complete educational platform with video streaming, quiz
+                                            system, progress tracking, and certification management.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">Laravel</span>
+                                            <span class="tech-badge">Vue.js</span>
+                                            <span class="tech-badge">MySQL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="contact-info">
-                    You can directly contact us at <a
-                        href="mailto:crewtechventure@gmail.com">crewtechventure@gmail.com</a>
-                    for more details.
+                    <!-- Slide 4 - Brand Identity Package -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Brand Identity Package</h4>
+                                        <p class="text-muted">Complete brand makeover including logo design, color
+                                            palette, typography, and marketing materials for a tech startup.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">Adobe Illustrator</span>
+                                            <span class="tech-badge">Photoshop</span>
+                                            <span class="tech-badge">Figma</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 - SEO Optimization Campaign -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-search-plus"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">SEO Optimization Campaign</h4>
+                                        <p class="text-muted">Comprehensive SEO strategy that increased organic traffic
+                                            by 300% and improved search rankings for 50+ keywords.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">Google Analytics</span>
+                                            <span class="tech-badge">SEMrush</span>
+                                            <span class="tech-badge">Schema Markup</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6 - Social Media Campaign -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-camera"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Social Media Campaign</h4>
+                                        <p class="text-muted">Creative social media graphics and video content that
+                                            boosted engagement rates by 250% across multiple platforms.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">After Effects</span>
+                                            <span class="tech-badge">Premiere Pro</span>
+                                            <span class="tech-badge">Canva Pro</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7 - Cloud Migration Project -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-cloud"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Cloud Migration Project</h4>
+                                        <p class="text-muted">Migrated enterprise infrastructure to AWS cloud with 99.9%
+                                            uptime, reducing costs by 40% and improving performance.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">AWS</span>
+                                            <span class="tech-badge">Docker</span>
+                                            <span class="tech-badge">Kubernetes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8 - Security Implementation -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Security Implementation</h4>
+                                        <p class="text-muted">Implemented comprehensive security measures including SSL,
+                                            firewall configuration, and DDoS protection for high-traffic websites.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">CloudFlare</span>
+                                            <span class="tech-badge">Let's Encrypt</span>
+                                            <span class="tech-badge">WAF</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 9 - Performance Optimization -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 col-lg-5">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="project-content">
+                                        <h4 class="project-title">Performance Optimization</h4>
+                                        <p class="text-muted">Optimized website loading speeds from 8s to 1.2s through
+                                            CDN implementation, caching strategies, and code optimization.</p>
+                                        <div class="project-tech">
+                                            <span class="tech-badge">CDN</span>
+                                            <span class="tech-badge">Redis</span>
+                                            <span class="tech-badge">Nginx</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
         </div>
-    </div>
+    </section>
+    <div id="footerImplement"></div>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // Add file upload functionality
-        document.querySelector('.centauri-upload-zone').addEventListener('click', function () {
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = '.pdf,.doc,.docx';
-            fileInput.style.display = 'none';
-            document.body.appendChild(fileInput);
-
-            fileInput.addEventListener('change', function (e) {
-                if (e.target.files.length > 0) {
-                    const fileName = e.target.files[0].name;
-                    document.querySelector('.centauri-upload-zone p').textContent = `Selected: ${fileName}`;
-                    document.querySelector('.centauri-upload-zone').style.background = 'rgba(255, 255, 255, 0.1)';
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-                document.body.removeChild(fileInput);
             });
-
-            fileInput.click();
         });
 
-        // Add form submission handling
-        document.querySelector('.sirius-submit-button').addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = {
-                name: document.querySelectorAll('.orion-input-field')[0].value,
-                email: document.querySelectorAll('.orion-input-field')[1].value,
-                company: document.querySelectorAll('.orion-input-field')[2].value,
-                budget: document.querySelectorAll('.orion-input-field')[3].value,
-                details: document.querySelector('.vega-textarea-field').value
-            };
-
-            // Simple validation
-            if (!formData.name || !formData.email) {
-                alert('Please fill in at least your name and email.');
-                return;
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(37, 99, 235, 0.95)';
+            } else {
+                navbar.style.backgroundColor = '';
             }
-
-            // Simulate form submission
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-            setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-                this.style.background = 'linear-gradient(45deg, #28a745, #20c997)';
-
-                setTimeout(() => {
-                    this.innerHTML = 'Send';
-                    this.style.background = 'linear-gradient(45deg, #667eea, #764ba2)';
-                }, 3000);
-            }, 2000);
-        });
-
-        // Add hover effects to step indicators
-        document.querySelectorAll('.quasar-step-indicator').forEach(indicator => {
-            indicator.addEventListener('mouseenter', function () {
-                this.style.transform = 'scale(1.1) rotate(10deg)';
-            });
-
-            indicator.addEventListener('mouseleave', function () {
-                this.style.transform = 'scale(1) rotate(0deg)';
-            });
         });
     </script>
 </body>
