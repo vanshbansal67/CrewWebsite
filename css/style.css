@@ -15,7 +15,6 @@
   --accent-color: #f59e0b;
   --dark-color: #1f2937;
   --light-gray: #f8fafc;
-
 }
 
 html,
@@ -24,11 +23,19 @@ body {
   background-color: white;
 }
 
+canvas {
+  display: block;
+  position: absolute;
+  top: 90px; /* leave space for navbar */
+  left: 0;
+  background: transparent;
+}
+
 #home1 {
   overflow: hidden;
   height: 100vh;
   width: 100vw;
-  background: url(..//images/home.gif);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(31,22,93,1) 100%) !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,6 +76,10 @@ a {
 }
 
 #description {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 50px;
   height: 90vh;
   width: 40vw;
   margin: 4% 6%;
@@ -112,7 +123,6 @@ a {
   background-color: #bababa62;
   padding-top: 2px;
 }
-
 
 #home3 {
   min-height: 100vh;
@@ -328,9 +338,11 @@ footer {
   justify-content: center;
   align-items: center;
   background: #0c0c1e;
-  background: linear-gradient(0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(31, 22, 93, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(31, 22, 93, 1) 100%
+  );
   color: white;
   text-align: center;
   /* padding: 40px 20px; */
@@ -474,7 +486,11 @@ footer .social-icons a:hover {
 }
 
 .service-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
@@ -485,9 +501,7 @@ footer .social-icons a:hover {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   overflow: hidden;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15),
-    0 1px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1);
   /* animation: fadeInUp 1s ease-out; */
   /* animation-fill-mode: both; */
   /* background: linear-gradient(145deg,
@@ -506,9 +520,7 @@ footer .social-icons a:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1); */
   /* animation: fadeInUp 1s ease-out;
   animation-fill-mode: both; */
-
 }
-
 
 .service-card:nth-child(1) {
   animation-delay: 0.2s;
@@ -529,10 +541,12 @@ footer .social-icons a:hover {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(102, 126, 234, 0.2),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102, 126, 234, 0.2),
+    transparent
+  );
   transition: left 0.6s;
 }
 
@@ -542,9 +556,11 @@ footer .social-icons a:hover {
 
 .service-card:hover {
   transform: translateY(-20px) rotateX(8deg) rotateY(8deg) scale(1.02);
-  background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.95),
-      rgba(255, 255, 255, 0.85));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.85)
+  );
   border: 1px solid rgba(102, 126, 234, 0.3);
   box-shadow: 0 30px 60px rgba(102, 126, 234, 0.25),
     0 15px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -558,11 +574,9 @@ footer .social-icons a:hover {
   transition: all 0.4s ease;
 }
 
-
 .service-card:hover .icon-container {
   transform: scale(1.1) rotateZ(60deg);
   transform: scale(1.1) rotateZ(360deg);
-
 }
 
 .icon {
@@ -701,7 +715,6 @@ footer .social-icons a:hover {
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     opacity: 0.3;
@@ -712,8 +725,6 @@ footer .social-icons a:hover {
     opacity: 0.8;
     transform: scale(1.02);
   }
-
-
 }
 
 @media (max-width: 768px) {
@@ -941,7 +952,6 @@ footer .social-icons a:hover {
 
 /* FAQ section */
 
-
 #home6 {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
@@ -1046,7 +1056,6 @@ footer .social-icons a:hover {
   padding: 40px;
   position: relative;
   overflow: hidden;
-
 }
 
 .contact-section::before {
@@ -1161,7 +1170,6 @@ footer .social-icons a:hover {
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   50%,
@@ -1186,17 +1194,20 @@ footer .social-icons a:hover {
   right: 0;
   bottom: 0;
   background: rgba(102, 126, 234, 0.1);
-  background-image: radial-gradient(circle at 25% 25%,
+  background-image: radial-gradient(
+      circle at 25% 25%,
       rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px),
-    radial-gradient(circle at 75% 75%,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 75% 75%,
       rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px);
+      transparent 1px
+    );
   background-size: 50px 50px;
 }
 
 @media (max-width: 768px) {
-
   .faq-title,
   .contact-title {
     font-size: 2rem;
@@ -1261,7 +1272,6 @@ footer .social-icons a:hover {
   /* margin: 0 10px; */
 }
 
-
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -1307,7 +1317,11 @@ footer .social-icons a:hover {
 }
 
 .service-icon.web-dev {
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 .service-icon.design {
@@ -1377,7 +1391,6 @@ footer .social-icons a:hover {
   }
 }
 
-
 #services-page-2 {
   background: url(../images/banner.png);
   background-position: center;
@@ -1392,7 +1405,6 @@ footer .social-icons a:hover {
 #services-page-3 {
   height: 90vh;
   background-color: white;
-
 }
 
 .section-title {
@@ -1409,7 +1421,7 @@ footer .social-icons a:hover {
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -1446,13 +1458,18 @@ footer .social-icons a:hover {
 }
 
 .feature-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transition: left 0.6s;
 }
 
@@ -1551,7 +1568,6 @@ footer .social-icons a:hover {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -1586,12 +1602,11 @@ footer .social-icons a:hover {
 }
 
 .services-page-3 {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 40px 20px;
 }
-
 
 .hero-section-project {
   background: url(../images/second_background.png);
@@ -1697,14 +1712,18 @@ footer .social-icons a:hover {
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 30vw;
   height: 8px;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color)
+  );
   border-radius: 2px;
 }
 
