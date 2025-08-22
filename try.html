@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Choose Us - Creative Section</title>
+    <title>CrewTech - Your Trusted Online Partner</title>
     <style>
         * {
             margin: 0;
@@ -13,170 +13,253 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%);
             min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 3.5rem;
             color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .logo::before {
+            content: '⚡';
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu li {
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu li:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .get-started-btn {
+            background: linear-gradient(45deg, #0066ff, #00d4ff);
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .get-started-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 100px);
+            padding: 0 50px;
+        }
+
+        .hero-section {
+            text-align: center;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .company-slogan {
+            font-size: 18px;
+            color: #00d4ff;
             margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            position: relative;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #ff6b6b, #feca57, #48cae4, #ff6b6b);
-            border-radius: 2px;
+        .main-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            background: linear-gradient(45deg, #ffffff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
+        .description {
             font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        .cta-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 40px 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+        .primary-btn {
+            background: linear-gradient(45deg, #0066ff, #00d4ff);
+            padding: 15px 35px;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
         }
 
-        .feature-card::before {
-            content: '';
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            padding: 15px 35px;
+            border-radius: 30px;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 25px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 0 25px;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1.1rem;
+            }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .main-heading {
+                font-size: 2rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+        }
+
+        /* Subtle background effects */
+        .bg-decoration {
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
+            pointer-events: none;
+            z-index: -1;
         }
 
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 2.5rem;
-            transition: all 1s ease;
-            position: relative;
-        }
-
-        .feature-card:nth-child(1) .feature-icon {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
-        }
-
-        .feature-card:nth-child(2) .feature-icon {
-            background: linear-gradient(45deg, #4ecdc4, #7ce8e0);
-            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
-        }
-
-        .feature-card:nth-child(3) .feature-icon {
-            background: linear-gradient(45deg, #45b7d1, #73c7e8);
-            box-shadow: 0 10px 30px rgba(69, 183, 209, 0.4);
-        }
-
-        .feature-card:nth-child(4) .feature-icon {
-            background: linear-gradient(45deg, #f39c12, #f7b342);
-            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
-        }
-
-        .feature-card:nth-child(5) .feature-icon {
-            background: linear-gradient(45deg, #e74c3c, #ec7063);
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
-        }
-
-        .feature-card:nth-child(6) .feature-icon {
-            background: linear-gradient(45deg, #9b59b6, #bb7db8);
-            box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4);
-        }
-
-        .feature-card:nth-child(7) .feature-icon {
-            background: linear-gradient(45deg, #2ecc71, #58d68d);
-            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: rotateY(360deg) scale(1.2);
-        }
-
-        .feature-title {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .feature-description {
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.6;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .feature-number {
+        .bg-decoration::before {
+            content: '';
             position: absolute;
-            top: 15px;
-            right: 20px;
-            width: 30px;
-            height: 30px;
-            background: rgba(255, 255, 255, 0.2);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
+            top: 20%;
+            right: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: 20%;
+            left: 10%;
+            animation: float 8s ease-in-out infinite reverse;
         }
 
         @keyframes float {
@@ -187,128 +270,46 @@
             }
 
             50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .feature-card:nth-child(even) {
-            animation-delay: -1.5s;
-        }
-
-        @media (max-width: 768px) {
-            .section-title h2 {
-                font-size: 2.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 30px 20px;
+                transform: translateY(-20px);
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="section-title">
-            <h2>Why Choose Us?</h2>
-            <p class="section-subtitle">Discover what makes us the perfect partner for your next project</p>
-        </div>
+    <div class="bg-decoration"></div>
 
-        <div class="features-grid">
-            <div class="feature-card floating">
-                <div class="feature-number">1</div>
-                <div class="feature-icon">💻</div>
-                <h3 class="feature-title">Expert Software Developers</h3>
-                <p class="feature-description">Our team of seasoned developers brings years of experience and
-                    cutting-edge expertise to every project, ensuring top-quality solutions.</p>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">CREWTECH</div>
+        <ul class="nav-menu">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Blog</li>
+            <li>Solutions</li>
+            <li>Contact</li>
+        </ul>
+        <button class="get-started-btn">Get Started</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="hero-section">
+            <p class="company-slogan">Your Trusted Online Partner</p>
+            <h1 class="main-heading">Powering Your Next Digital Leap</h1>
+            <p class="description">
+                Crew Tech Venture is a premier transnational ITES group committed to delivering innovative online
+                solutions to organizations worldwide. With a focus on accuracy, speed, and actionable insights, we
+                empower businesses to make informed decisions and drive sustainable growth.
+            </p>
+            <div class="cta-section">
+                <button class="primary-btn">Get Started Today</button>
+                <button class="secondary-btn">Learn More</button>
             </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">2</div>
-                <div class="feature-icon">🎯</div>
-                <h3 class="feature-title">Customized Solutions</h3>
-                <p class="feature-description">We don't believe in one-size-fits-all. Every solution is tailored
-                    specifically to meet your unique business needs and goals.</p>
-            </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">3</div>
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Agile Development Process</h3>
-                <p class="feature-description">Fast, flexible, and efficient development cycles that adapt to changes
-                    while maintaining the highest quality standards.</p>
-            </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">4</div>
-                <div class="feature-icon">💬</div>
-                <h3 class="feature-title">Transparent Communication</h3>
-                <p class="feature-description">Stay informed every step of the way with clear, honest communication and
-                    regular project updates.</p>
-            </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">5</div>
-                <div class="feature-icon">🔄</div>
-                <h3 class="feature-title">End-to-End Service</h3>
-                <p class="feature-description">From initial concept to deployment and maintenance, we provide
-                    comprehensive solutions throughout the entire project lifecycle.</p>
-            </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">6</div>
-                <div class="feature-icon">🛡️</div>
-                <h3 class="feature-title">Security & Performance Focus</h3>
-                <p class="feature-description">Built with security-first mindset and optimized for peak performance,
-                    ensuring your applications are fast, secure, and reliable.</p>
-            </div>
-
-            <div class="feature-card floating">
-                <div class="feature-number">7</div>
-                <div class="feature-icon">🤝</div>
-                <h3 class="feature-title">Long-Term Partnership</h3>
-                <p class="feature-description">We're not just vendors, we're partners invested in your success. Building
-                    lasting relationships that grow with your business.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Add interactive hover effects
-        const cards = document.querySelectorAll('.feature-card');
-
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-15px) scale(1.03)';
-                this.style.zIndex = '10';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.zIndex = '1';
-            });
-        });
-
-        // Add subtle parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const cards = document.querySelectorAll('.feature-card');
-
-            cards.forEach((card, index) => {
-                const speed = 0.1 + (index * 0.02);
-                card.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
-    </script>
+        </section>
+    </main>
 </body>
 
 </html>

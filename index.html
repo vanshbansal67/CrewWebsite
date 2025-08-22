@@ -18,26 +18,38 @@
 
 <body>
     <section id="home1">
+
+
+        <!-- 
+          -->
         <canvas id="network"></canvas>
         <div id="navbarImplement"></div>
-        <section id="description" data-aos="fade-down" data-aos-duration="1500">
-            <div class="description-1 fs-5">Your Trusted Online Partner
-            </div>
-            <div class="description-2 ">Powering Your Next Digital Leap
-            </div>
-            <div class="description-3 fs-5">Get your Own Custom Software made just for your business with the feature
-                you need and easy-to-use design.</div>
-            <br>
-            <div class="description-4">
-                <button class="btn btn-outline-primary rounded-3" data-aos="fade-right" data-aos-duration="1500">Know
-                    More</button>
-            </div>
-        </section>
+        <main class="main-content">
+            <section class="hero-section-1">
+                <p class="company-slogan">Your Trusted Online Partner</p>
+                <h1 class="main-heading">Powering Your Next Digital Leap</h1>
+                <p class="description">
+                    Crew Tech Venture is a premier transnational ITES group committed to delivering innovative online
+                    solutions to organizations worldwide. With a focus on accuracy, speed, and actionable insights, we
+                    empower businesses to make informed decisions and drive sustainable growth.
+                </p>
+                <div class="cta-section">
+                    <button class="btn-primary btn">Get Started Today</button>
+                    <!-- <button class="btn-secondary btn">Learn More</button> -->
+                </div>
+            </section>
+        </main>
     </section>
 
     <div class=" our-services">
-        <h1 class="title">Our Services</h1>
-
+        <div class="section-title">
+            <h2 class="">Our Services</h2>
+            <p class="text-center fs-5">At Crew Tech Venture, we deliver technology-driven solutions that help
+                businesses
+                grow
+                smarter, faster, and
+                more efficiently</p>
+        </div>
         <div class="services-grid">
             <div class="service-card" onclick="addRipple(event)" data-aos="fade-right" data-aos-delay="300"
                 data-aos-duration="1000">
@@ -48,8 +60,8 @@
                 </div>
                 <h3 class="service-title">Web Development</h3>
                 <p class="service-description">
-                    Create stunning, responsive websites that deliver exceptional user experiences across all devices.
-                    From modern frontend designs to robust backend solutions.
+                    Responsive, scalable, and secure websites tailored to meet your business needs, from corporate sites
+                    to e-commerce platforms.
                 </p>
             </div>
 
@@ -62,8 +74,8 @@
                 </div>
                 <h3 class="service-title">App Development</h3>
                 <p class="service-description">
-                    Build powerful mobile applications for iOS and Android platforms. Native performance with
-                    cutting-edge features and intuitive user interfaces.
+                    User-friendly mobile and web applications with seamless functionality, built to enhance customer
+                    engagement and drive business growth.
                 </p>
             </div>
 
@@ -76,8 +88,34 @@
                 </div>
                 <h3 class="service-title">Graphics Designing</h3>
                 <p class="service-description">
-                    Craft visually compelling designs that capture your brand essence. From logos and branding to
-                    marketing materials and digital artwork.
+                    Creative and impactful designs, including branding, UI/UX, marketing materials, and digital assets
+                    that bring your ideas to life.
+                </p>
+            </div>
+            <div class="service-card" onclick="addRipple(event)" data-aos="fade-left" data-aos-delay="700"
+                data-aos-duration="1000">
+                <div class="icon-container">
+                    <div class="icon graphics">
+                        🎨
+                    </div>
+                </div>
+                <h3 class="service-title">Market Research Support</h3>
+                <p class="service-description">
+                    Reliable online research assistance, data processing, and analytics to help organizations make
+                    informed decisions.
+                </p>
+            </div>
+            <div class="service-card" onclick="addRipple(event)" data-aos="fade-left" data-aos-delay="700"
+                data-aos-duration="1000">
+                <div class="icon-container">
+                    <div class="icon graphics">
+                        🎨
+                    </div>
+                </div>
+                <h3 class="service-title">IT-Enabled Solutions</h3>
+                <p class="service-description">
+                    Customized technology solutions designed to streamline processes, improve productivity, and ensure
+                    business continuity.
                 </p>
             </div>
         </div>
@@ -88,7 +126,8 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Our Projects</h2>
-                    <p>Showcasing my latest work and creative solutions</p>
+                    <p> At Crew Tech Venture, we take pride in delivering impactful digital solutions across industries.
+                        Some of our key projects include: </p>
                 </div>
 
                 <div class="carousel-container" id="projectCarousel">
@@ -459,91 +498,7 @@
     <script src="js/main.js"></script>
     <script src="js/index.js"></script>
     <script>
-        const canvas = document.getElementById("network");
-        const ctx = canvas.getContext("2d");
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight - 90; // adjust for top gap
 
-        const numPoints = 80;
-        const points = [];
-
-        for (let i = 0; i < numPoints; i++) {
-            points.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 3 + 1, // depth effect
-                glow: Math.random() * 15 + 5
-            });
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draw glowing points
-            points.forEach(p => {
-                const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.glow);
-                gradient.addColorStop(0, "rgba(0,255,255,1)");
-                gradient.addColorStop(1, "rgba(0,255,255,0)");
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-
-            // Draw pulsing lines
-            for (let i = 0; i < points.length; i++) {
-                for (let j = i + 1; j < points.length; j++) {
-                    const dx = points[i].x - points[j].x;
-                    const dy = points[i].y - points[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 150) {
-                        const alpha = 1 - dist / 150;
-                        ctx.strokeStyle = `rgba(0,255,255,${alpha})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(points[i].x, points[i].y);
-                        ctx.lineTo(points[j].x, points[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function update() {
-            points.forEach(p => {
-                // Small random acceleration for organic motion
-                p.vx += (Math.random() - 0.5) * 0.05;
-                p.vy += (Math.random() - 0.5) * 0.05;
-
-                // Limit speed
-                p.vx = Math.max(Math.min(p.vx, 1), -1);
-                p.vy = Math.max(Math.min(p.vy, 1), -1);
-
-                p.x += p.vx;
-                p.y += p.vy;
-
-                // Wrap around
-                if (p.x < 0) p.x = canvas.width;
-                if (p.x > canvas.width) p.x = 0;
-                if (p.y < 0) p.y = canvas.height;
-                if (p.y > canvas.height) p.y = 0;
-            });
-        }
-
-        function animate() {
-            draw();
-            update();
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight - 90;
-        });
     </script>
 </body>
 
