@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/style.css">
-=======
-    <link rel="stylesheet" href="css/style.css">
->>>>>>> 789cc76bd1456ead93edd4f45bbf64d83c23725b
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/about.css">
     <title>About Us - CrewTech</title>
 </head>
@@ -27,15 +23,17 @@
             <p>Building scalable, secure, and innovative software solutions that drive digital transformation and
                 empower businesses worldwide.</p>
         </div>
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div style="font-size: 1.5rem;">↓</div>
             <div style="font-size: 0.9rem; margin-top: 0.5rem;">Scroll to explore</div>
-        </div>
+        </div> -->
     </section>
     <!-- Values Section -->
     <section class="section values-section">
         <div class="container">
-            <h2 class="section-title">Our Values</h2>
+            <div class="section-title">
+                <h2>Our Values</h2>
+            </div>
             <div class="values-grid">
                 <div class="value-card">
                     <img class="value-icon" src="./images/client-centric.png" alt="image">
@@ -87,18 +85,23 @@
     <!-- Our Story Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Future-Ready Solutions for Modern Business</h2>
+            <div class="section-title">
+                <h2>Future-Ready Solutions for Modern Business</h2>
+            </div>
             <div class="story-grid">
                 <div class="story-text">
                     <p>CrewTech is a dynamic digital solutions company located in Noida, Uttar Pradesh, committed to
                         helping businesses thrive in the digital age. With a skilled team of professionals, we
-                        specialize in website and mobile app development, graphic design, social media strategy, video
+                        specialize in website and mobile app development, graphic design, social media strategy,
+                        video
                         editing, and digital marketing.</p>
                     <p>Our approach is rooted in innovation and a passion for excellence. We focus on delivering
-                        high-quality, tailored solutions that not only fulfill our clients’ requirements but go beyond
+                        high-quality, tailored solutions that not only fulfill our clients’ requirements but go
+                        beyond
                         to deliver lasting value and measurable success.</p>
                     <p>We are dedicated to empowering businesses by transforming their vision into digital success
-                        stories. With a deep understanding of each brand’s individuality, we craft tech-driven solutions
+                        stories. With a deep understanding of each brand’s individuality, we craft tech-driven
+                        solutions
                         that bring your story to life in the most engaging and effective way.</p>
                 </div>
                 <!-- <div class="story-visual"></div> -->
@@ -145,7 +148,9 @@
     <!-- Team Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
+            <div class="section-title">
+                <h2>Meet Our Team</h2>
+            </div>
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-photo"></div>
@@ -210,44 +215,44 @@
         });
 
         // Smooth scrolling for scroll indicator
-        document.querySelector('.scroll-indicator').addEventListener('click', () => {
-            document.querySelector('.section').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+        // document.querySelector('.scroll-indicator').addEventListener('click', () => {
+        //     document.querySelector('.section').scrollIntoView({
+        //         behavior: 'smooth'
+        //     });
+        // });
 
         // Add parallax effect to hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('#hero');
-            const rate = scrolled * -0.5;
-            if (hero) {
-                hero.style.transform = `translateY(${rate}px)`;
-            }
-        });
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load Navbar
-            const navbarElement = document.getElementById('navbarImplement');
-            if (navbarElement) {
-                fetch('./navbar.html') // Ensure the correct path to navbar.html
-                    .then(response => response.text())
-                    .then(data => {
-                        navbarElement.innerHTML = data;
-                    })
-                    .catch(error => console.error('Error loading navbar:', error));
-            }
+        // window.addEventListener('scroll', () => {
+        //     const scrolled = window.pageYOffset;
+        //     const hero = document.querySelector('#hero');
+        //     const rate = scrolled * -0.5;
+        //     if (hero) {
+        //         hero.style.transform = `translateY(${rate}px)`;
+        //     }
+        // });
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     // Load Navbar
+        //     const navbarElement = document.getElementById('navbarImplement');
+        //     if (navbarElement) {
+        //         fetch('./navbar.html') // Ensure the correct path to navbar.html
+        //             .then(response => response.text())
+        //             .then(data => {
+        //                 navbarElement.innerHTML = data;
+        //             })
+        //             .catch(error => console.error('Error loading navbar:', error));
+        //     }
 
-            // Load Footer
-            const footerElement = document.getElementById('footerImplement');
-            if (footerElement) {
-                fetch('./footer.html') // Ensure the correct path to footer.html
-                    .then(response => response.text())
-                    .then(data => {
-                        footerElement.innerHTML = data;
-                    })
-                    .catch(error => console.error('Error loading footer:', error));
-            }
-        });
+        //     // Load Footer
+        //     const footerElement = document.getElementById('footerImplement');
+        //     if (footerElement) {
+        //         fetch('./footer.html') // Ensure the correct path to footer.html
+        //             .then(response => response.text())
+        //             .then(data => {
+        //                 footerElement.innerHTML = data;
+        //             })
+        //             .catch(error => console.error('Error loading footer:', error));
+        //     }
+        // });
     </script>
     <script src="/CrewWebsite/js/main.js"></script>
 </body>

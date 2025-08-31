@@ -516,6 +516,7 @@ footer .social-icons a:hover {
   min-height: 100vh;
   padding: 20px;
   overflow-x: hidden;
+  /* width: 800px; */
 }
 
 .title {
@@ -1438,7 +1439,7 @@ footer .social-icons a:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
+  height: 50vh;
   color: white;
   width: 100vw;
   /* transform: translate(-50%, -50%); */
@@ -1485,6 +1486,7 @@ footer .social-icons a:hover {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-top: 40px;
+  max-width: 100vw;
 }
 
 .feature-card {

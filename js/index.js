@@ -302,3 +302,8 @@ document.querySelectorAll('.testimonial-card').forEach(card => {
     });
 });
 
+
+
+function goToPage() {
+    window.open("services.html", "_blank");
+}
