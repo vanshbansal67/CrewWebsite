@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,22 +9,21 @@ body {
   overflow-x: hidden;
   background-color: white;
   font-family: sans-serif;
-}
-
+} */
 
 /* Hero Section */
 #hero_section {
-  background: linear-gradient(0deg, #1F165D 0%, #0C0C1E 100%);
+  /* background: linear-gradient(0deg, #1F165D 0%, #0C0C1E 100%); */
   /* padding: 1rem; */
   color: white;
   overflow: hidden;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   background-image: url(../images/second_background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ebebeb;
+  /* background-color: #ebebeb; */
   position: relative;
   z-index: 1;
 }
@@ -44,22 +43,22 @@ body {
 }
 
 /* Social Icons */
-.social-icons {
+.social-icons-contact {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 9rem;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.social-icons img {
+.social-icons-contact img {
   height: 40px;
-  margin: 0 1vw;
+  margin: 1rem 1vw;
 }
 
 .cosmic-content-container {
-  margin-top: 200px;
-  max-width: 600px;
+  margin-top: 150px;
+  max-width: 45vw;
   margin: 10px;
   padding: 60px 20px;
   position: relative;
@@ -135,20 +134,20 @@ body {
 }
 
 .form-container {
-  background: linear-gradient(135deg, #000000, #000000);
+  /* background: linear-gradient(135deg, #000000, #000000); */
   /* background: #000000; */
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 30px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.39);
   /* border: 1px solid rgba(255, 255, 255, 0.2); */
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 40vw;
+  margin: 1rem auto;
   border: 2px solid linear-gradient(135deg, #4fc2f796, #29b6f6);
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-40%, -40%);
   z-index: 100;
 }
 
@@ -311,14 +310,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-5%, 10%);
+  transform: translate(-5%, 5%);
   z-index: 10;
-  background: linear-gradient(135deg, #12084E, #4fc3f7);
+  background: linear-gradient(165deg, #12084E, #4fc3f7);
   backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 40px;
+  border-radius: 1.3rem;
+  padding: 1.8rem;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.39);
-  max-width: 600px;
+  max-width: 45vw;
   width: 90%;
   height: auto;
 }
