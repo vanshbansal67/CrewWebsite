@@ -3,15 +3,12 @@
   width: auto;
   margin: 0;
   padding: 0;
-  /* overflow-x: hidden; */
-
   --primary-color: #6366f1;
   --secondary-color: #8b5cf6;
   --dark-bg: #1e1b4b;
   --light-bg: #f8fafc;
-
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
+  /* --primary-color: #2563eb; */
+  /* --secondary-color: #1e40af; */
   --accent-color: #f59e0b;
   --dark-color: #1f2937;
   --light-gray: #f8fafc;
@@ -27,7 +24,6 @@ canvas {
   display: block;
   position: absolute;
   top: 90px;
-  /* leave space for navbar */
   left: 0;
   background: transparent;
 }
@@ -73,7 +69,10 @@ a {
 .btn-primary {
   border-radius: 35px;
   font-size: 20px;
+  color: #000;
   font-weight: bolder;
+  background-color: white;
+  border-color: white;
 }
 
 /* Main Content */
@@ -93,7 +92,7 @@ a {
 
 .company-slogan {
   font-size: 28px;
-  color: #00d4ff;
+  color: white;
   margin-bottom: 20px;
   font-weight: 300;
   letter-spacing: 1px;
@@ -111,7 +110,7 @@ a {
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 40px;
   color: rgba(255, 255, 255, 0.9);
@@ -123,14 +122,16 @@ a {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  /* background-color: white; */
 }
 
 .primary-btn {
-  background: linear-gradient(45deg, #0066ff, #00d4ff);
+  /* background: linear-gradient(45deg, #0066ff, #00d4ff); */
+  background-color: white;
   padding: 15px 35px;
   border-radius: 30px;
   border: none;
-  color: white;
+  color: black;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -179,7 +180,7 @@ a {
 #home3 {
   min-height: 100vh;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(165deg, #1C1454 30%, #220b76 50%, #0F0759 70%);
 }
 
 .projects-section {
@@ -189,19 +190,22 @@ a {
 .section-title {
   text-align: center;
   margin-bottom: 60px;
-  color: white;
+  /* color: white; */
 }
 
 .section-title h2 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* color: rgba(57, 33, 33, 0.6); */
+  /* color: grey; */
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
 }
 
 .section-title p {
   font-size: 1.2rem;
   opacity: 0.9;
+  color: white;
 }
 
 .carousel-container {
@@ -222,7 +226,6 @@ a {
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: transform 0.8s ease, opacity 0.8s ease;
-  /* Smooth transition */
   transform-style: preserve-3d;
   cursor: pointer;
   overflow: hidden;
@@ -379,7 +382,7 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 80vh;
   color: white;
 }
 
@@ -395,7 +398,6 @@ footer {
       rgba(31, 22, 93, 1) 100%);
   color: white;
   text-align: center;
-  /* padding: 40px 20px; */
 }
 
 footer .container {
@@ -406,7 +408,6 @@ footer .container {
 }
 
 footer .logo {
-  /* width: 60px; */
   height: 8vw;
 }
 
@@ -422,7 +423,7 @@ footer .brand .highlight {
 
 footer .tagline {
   margin: 15px 0;
-  font-size: 18px;
+  font-size: 20px;
   color: #ccc;
 }
 
@@ -447,7 +448,7 @@ footer .search-box input {
 footer .search-box button {
   /* margin: auto; */
   padding: 12px 24px;
-  background: linear-gradient(to right, #3dcaff, #74e0ff);
+  background: linear-gradient(to right, #2f15c2, #1a1341);
   border: none;
   border-radius: 0 25px 25px 0;
   font-weight: bold;
@@ -510,13 +511,13 @@ footer .social-icons a:hover {
 }
 
 /* our services */
-
 .our-services {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(165deg, #000000 30%, #1C1454 60%);
+
+  /* background-color: #000000; */
   min-height: 100vh;
   padding: 20px;
   overflow-x: hidden;
-  /* width: 800px; */
 }
 
 .title {
@@ -552,24 +553,6 @@ footer .social-icons a:hover {
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1);
-  /* animation: fadeInUp 1s ease-out; */
-  /* animation-fill-mode: both; */
-  /* background: linear-gradient(145deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.7));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1); */
-  /* animation: fadeInUp 1s ease-out;
-  animation-fill-mode: both; */
 }
 
 .service-card:nth-child(1) {
@@ -675,47 +658,6 @@ footer .social-icons a:hover {
   color: #444;
 }
 
-/* .floating-elements {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-} */
-
-/* .floating-circle {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-circle:nth-child(1) {
-  width: 80px;
-  height: 80px;
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.floating-circle:nth-child(2) {
-  width: 120px;
-  height: 120px;
-  top: 60%;
-  right: 10%;
-  animation-delay: 2s;
-}
-
-.floating-circle:nth-child(3) {
-  width: 60px;
-  height: 60px;
-  bottom: 20%;
-  left: 20%;
-  animation-delay: 4s;
-} */
-
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -808,9 +750,8 @@ footer .social-icons a:hover {
 }
 
 /* Auto review carousel */
-
 #home5 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(165deg, #06032C 60%, #1C1454 80%);
   min-height: auto;
   padding: 50px;
 }
@@ -828,7 +769,7 @@ footer .social-icons a:hover {
 .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #2c3e50;
+  /* color: #58f558; */
   margin-bottom: 20px;
 }
 
@@ -998,9 +939,8 @@ footer .social-icons a:hover {
 }
 
 /* FAQ section */
-
 #home6 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1C1453 40%, #1B1350 60%);
   min-height: 100vh;
   padding: 1rem;
 }
@@ -1008,7 +948,6 @@ footer .social-icons a:hover {
 .faq-section {
   background: transparent;
   padding: 40px 20px;
-  /* margin: 40px 0; */
   background: transparent;
   padding: 40px 20px;
   margin: 40px 0;
@@ -1119,11 +1058,11 @@ footer .social-icons a:hover {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #333;
+  color: #1C1453;
 }
 
 .contact-info {
-  background: #f8f9fa;
+  background: #f7f0f0;
   border-radius: 15px;
   padding: 30px;
   height: 100%;
@@ -1148,7 +1087,8 @@ footer .social-icons a:hover {
 .contact-icon {
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  background-color: #1C1453;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1165,7 +1105,7 @@ footer .social-icons a:hover {
 .contact-details h6 {
   margin: 0;
   color: #333;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .contact-details p {
@@ -1175,7 +1115,8 @@ footer .social-icons a:hover {
 }
 
 .contact-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  background-color: #1C1453;
   border: none;
   color: white;
   padding: 12px 30px;
@@ -1283,10 +1224,6 @@ footer .social-icons a:hover {
 }
 
 .hero-section {
-  /* background: url(../images/second_background.png); */
-  /* min-height: 85vh; */
-  /* position: relative;
-  overflow: hidden; */
   display: flex;
   align-items: center;
 }
@@ -1314,13 +1251,12 @@ footer .social-icons a:hover {
   position: relative;
   z-index: 3;
   border-radius: 50px 50px 0 0;
-  /* margin: 0 10px; */
 }
 
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #1e293b;
+  /* color: #8ba1c4; */
   margin-bottom: 1rem;
 }
 
@@ -1442,7 +1378,6 @@ footer .social-icons a:hover {
   height: 50vh;
   color: white;
   width: 100vw;
-  /* transform: translate(-50%, -50%); */
 }
 
 #services-page-3 {
@@ -1453,13 +1388,16 @@ footer .social-icons a:hover {
 .section-title {
   text-align: center;
   margin-bottom: 60px;
+  /* text-shadow: 2px 2px 5px rgba(248, 248, 248, 0.895); */
+
 }
 
 .section-title h2 {
   font-size: 3.5rem;
-  color: white;
+  color: linear-gradient(45deg, #ffffff, #00d4ff);
+  /* color: linear-gradient(90deg, #ff6b6b, #feca57, #48cae4, #ff6b6b); */
   margin-bottom: 20px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* text-shadow:  10px 4px 7px rgba(205, 173, 173, 0.909); */
   position: relative;
 }
 
@@ -1471,7 +1409,7 @@ footer .social-icons a:hover {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #ff6b6b, #feca57, #48cae4, #ff6b6b);
+  /* background: linear-gradient(90deg, #ddd1d1, #e0ded9, #a8c1c6, #ff6b6b); */
   border-radius: 2px;
 }
 
@@ -1490,11 +1428,13 @@ footer .social-icons a:hover {
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.112);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 40px 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 10px 13px 14px rgba(255, 255, 255, 0.685);
+  /* x, y, blur, color */
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -1671,13 +1611,10 @@ footer .social-icons a:hover {
   width: 90vw;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100vh;
-  /* border-radius: 30px; */
   margin: 10px;
-  /* padding: 10px; */
 }
 
 .project-card-2:hover {
-  /* transform: translateY(-10px); */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -1743,7 +1680,7 @@ footer .social-icons a:hover {
 }
 
 .section-title h2 {
-  color: var(--dark-color);
+  /* color: var(--dark-color); */
   font-weight: bold;
   position: relative;
   display: inline-block;
@@ -1756,12 +1693,11 @@ footer .social-icons a:hover {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 30vw;
+  width: 25vw;
   height: 8px;
-  background: linear-gradient(135deg,
-      var(--primary-color),
-      var(--accent-color));
-  border-radius: 2px;
+  background: linear-gradient(90deg, rgb(38, 186, 249),
+      #1C1454);
+  border-radius: 5px;
 }
 
 .project-carousel-2 {

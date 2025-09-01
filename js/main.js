@@ -35,12 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 const canvas = document.getElementById("network");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight - 90; // adjust for top gap
-
 const numPoints = 80;
 const points = [];
 
@@ -57,7 +55,6 @@ for (let i = 0; i < numPoints; i++) {
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     // Draw glowing points
     points.forEach(p => {
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.glow);
@@ -108,15 +105,12 @@ function update() {
         if (p.y > canvas.height) p.y = 0;
     });
 }
-
-function animate() {
-    draw();
-    update();
-    requestAnimationFrame(animate);
-}
-
+// function animate() {
+//     draw();
+//     update();
+//     requestAnimationFrame(animate);
+// }
 animate();
-
 window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight - 90;

@@ -135,7 +135,8 @@ body {
 }
 
 .form-container {
-  background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+  background: linear-gradient(135deg, #000000, #000000);
+  /* background: #000000; */
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 30px;
@@ -221,6 +222,11 @@ body {
   font-size: 16px;
 }
 
+.file-upload-text i {
+  height: 20px;
+  width: 20px;
+}
+
 .file-input {
   position: absolute;
   top: 0;
@@ -232,13 +238,13 @@ body {
 }
 
 .send-btn {
-  background: #2c3e50;
+  background: #12084E;
   color: white;
   border: none;
   border-radius: 15px;
   padding: 15px 40px;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 900;
   width: 100%;
   margin: 30px 0;
   transition: all 0.3s ease;
@@ -246,7 +252,7 @@ body {
 }
 
 .send-btn:hover {
-  background: #34495e;
+  background: #19528b;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
 }
@@ -262,7 +268,7 @@ body {
 .contact-info2 {
   color: white;
   text-align: center;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.6;
 }
 
@@ -307,7 +313,7 @@ body {
   left: 50%;
   transform: translate(-5%, 10%);
   z-index: 10;
-  background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+  background: linear-gradient(135deg, #12084E, #4fc3f7);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   padding: 40px;

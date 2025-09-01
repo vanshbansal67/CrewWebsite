@@ -1,6 +1,5 @@
 // Initialize carousel
 document.addEventListener("DOMContentLoaded", function () {
-
     const carousel = document.getElementById('projectCarousel');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -132,8 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open(`mailto:${email}`, '_self');
     });
 });
-
-
 // Sample project data - you can replace with your actual projects
 const projects = [
     {
@@ -174,18 +171,13 @@ const projects = [
     }
 ];
 
-
-
 // Auto-rotate cards every 5 seconds
 setInterval(() => {
     nextProject();
 }, 4000); // 5000 milliseconds = 5 seconds
-
-
 // Add touch/swipe support for mobile
 let startX = 0;
 let endX = 0;
-
 carousel.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
 });
@@ -207,8 +199,6 @@ function handleSwipe() {
         }
     }
 }
-
-
 
 // code for services section 
 function addRipple(event) {
@@ -301,9 +291,6 @@ document.querySelectorAll('.testimonial-card').forEach(card => {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
-
-
-
 function goToPage() {
     window.open("services.html", "_blank");
 }
