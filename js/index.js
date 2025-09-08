@@ -1,4 +1,7 @@
 // Initialize carousel
+
+// Add this script in your index.html or in a separate JS file
+
 document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.getElementById('projectCarousel');
     const prevBtn = document.getElementById('prevBtn');
@@ -293,4 +296,7 @@ document.querySelectorAll('.testimonial-card').forEach(card => {
 });
 function goToPage() {
     window.open("services.html", "_blank");
+}
+function getStarted() {
+    window.open("getStarted.html", "_blank");
 }
