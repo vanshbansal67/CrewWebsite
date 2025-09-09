@@ -44,7 +44,7 @@ canvas {
 /* Navbar Styles */
 .navbar {
   position: fixed;
-  top: 1rem;
+  /* top: 1rem; */
   left: 0;
   width: 100%;
   background: rgba(5, 4, 4, 0.482);
@@ -1193,7 +1193,7 @@ footer .copyright {
 }
 
 .faq-container {
-  max-width: 800px;
+  max-width: 950px;
   margin: 0 auto;
 }
 
@@ -1270,7 +1270,7 @@ footer .copyright {
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
@@ -1295,7 +1295,7 @@ footer .copyright {
 .contact-info {
   background: #f7f0f0;
   border-radius: 15px;
-  padding: 30px;
+  padding: 1.3rem;
   height: 100%;
 }
 
@@ -1303,7 +1303,7 @@ footer .copyright {
   display: flex;
   align-items: center;
   margin-bottom: 25px;
-  padding: 15px;
+  padding: 10px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -1339,8 +1339,10 @@ footer .copyright {
   font-weight: 800;
 }
 
+
 .contact-details p {
   margin: 5px 0 0 0;
+
   color: #666;
   font-size: 0.95rem;
 }
@@ -1432,14 +1434,22 @@ footer .copyright {
 
   .faq-section,
   .contact-section {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 1.8rem;
+    /* margin: 20px 0; */
   }
 
   .contact-item {
     flex-direction: column;
     text-align: center;
+    padding: 0 20px;
   }
+
+  .contact-item p {
+    /* font-size: 1rem; */
+    /* padding: 0 3rem; */
+  }
+
+
 
   .contact-icon {
     margin-right: 0;
