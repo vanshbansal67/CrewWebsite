@@ -116,6 +116,7 @@ canvas {
 }
 
 /* Mobile Menu Button */
+/* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
@@ -131,28 +132,71 @@ canvas {
   transition: all 0.3s ease;
 }
 
-/* Responsive Styles */
+/* Mobile View Styles */
+/* Mobile View Styles */
+/* Mobile View Styles */
 @media (max-width: 768px) {
+
   .nav-links {
     position: fixed;
-    top: 70px;
+    top: 0;
     right: -100%;
+    /* Initially hidden off-screen */
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
+    background: #1e1e1e;
+    /* Dark background */
     width: 70%;
-    height: calc(100vh - 70px);
+    /* Adjust width as needed */
+    height: 100vh;
     padding: 20px;
     gap: 20px;
-    transition: right 0.3s ease;
+    transition: right 0.5s ease-in-out;
+    /* Smooth slide-in animation */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    /* Shadow for depth */
+    z-index: 1000;
   }
 
   .nav-links.active {
     right: 0;
+    /* Slide in from the right */
+  }
+
+  .nav-links li {
+    list-style: none;
+    text-align: right;
+    /* Align elements to the right */
+  }
+
+  .nav-links li a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    color: #00d4ff;
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
   }
 
   .mobile-menu-btn {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+    /* Ensure it stays above the nav-links */
+  }
+
+  .mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   .mobile-menu-btn.active span:nth-child(1) {
@@ -165,6 +209,37 @@ canvas {
 
   .mobile-menu-btn.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-links li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-links.active li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .nav-links.active li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+
+  .nav-links.active li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+
+  .nav-links.active li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+
+  .nav-links.active li:nth-child(5) {
+    transition-delay: 0.5s;
   }
 }
 

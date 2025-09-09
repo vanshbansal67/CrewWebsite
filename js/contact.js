@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Footer element not found!");
     }
     if (navbarElement) {
-        fetch("Navbar2.html")
+        fetch("Navbar.html")
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch Navbar.html");
@@ -44,6 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 navbarElement.innerHTML = data;
+
+                // Add toggle functionality after navbar is loaded
+                const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+                const navLinks = document.getElementById("navLinks");
+
+                if (mobileMenuBtn && navLinks) {
+                    mobileMenuBtn.addEventListener("click", () => {
+                        navLinks.classList.toggle("active");
+                        mobileMenuBtn.classList.toggle("active");
+                    });
+                } else {
+                    console.error("Mobile menu button or nav links not found!");
+                }
             })
             .catch(error => console.error("Error loading navbar:", error));
     } else {
