@@ -2171,8 +2171,10 @@ footer .copyright {
 }
 
 .project-image {
-  height: 70%;
+  height: 100%;
   /* width: 80%; */
+  background-position: center;
+  background-size: cover;
   background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
   display: flex;
   align-items: center;
@@ -2181,7 +2183,14 @@ footer .copyright {
   font-size: 3rem;
 }
 
+.project-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .project-content {
+  /* height: 100%; */
   padding: 2rem;
 }
 
