@@ -2162,7 +2162,7 @@ footer .copyright {
   overflow: hidden;
   width: 90vw;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100vh;
+  min-height: 100vh;
   margin: 10px;
 }
 
