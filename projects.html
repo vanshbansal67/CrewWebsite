@@ -8,6 +8,363 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .showcase-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #12124f 50%, #16213e 100%);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .showcase-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #22c55e 50%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .project-slide {
+            min-width: 100%;
+            position: relative;
+            /* display: flex; */
+            align-items: center;
+            padding: 60px;
+            gap: 60px;
+        }
+
+        .project-video {
+            flex: 1;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-video video {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+        } */
+
+        .project-video:hover .video-overlay {
+            opacity: 1;
+        }
+
+        /* .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        } */
+
+        /* .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        } */
+
+        /* .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #000;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        } */
+
+        .project-info {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .project-category {
+            color: #22c55e;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .project-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+            color: #cbd5e1;
+        }
+
+        .project-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(34, 197, 94, 0.4);
+        }
+
+        .carousel-controls {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .carousel-btn {
+            /* top: 10px; */
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            /* font-size: 46px; */
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding: auto; */
+            /* bottom: 20px; */
+            padding: 25px;
+
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+            margin: 0 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #22c55e;
+            transform: scale(1.2);
+        }
+
+        .project-counter {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .project-slide {
+                flex-direction: row;
+                /* Stack content vertically */
+                padding: 20px;
+                /* Adjust padding for smaller screens */
+                /* gap: 20px; */
+            }
+
+            .project-video {
+                width: 100%;
+                /* Make the video take full width */
+                height: 100%;
+                /* Maintain aspect ratio */
+            }
+
+            .project-video video {
+                width: 100%;
+                /* Full width for the video */
+                height: 100%;
+                /* Maintain aspect ratio */
+                object-fit: cover;
+                /* Ensure the video covers the container */
+            }
+
+            .project-info {
+                text-align: center;
+                /* Center-align text for better readability */
+                padding: 10px;
+            }
+
+            .carousel-wrapper {
+                flex-direction: row;
+                /* Stack slides vertically if needed */
+            }
+
+            .carousel-container {
+                padding: 10px;
+                /* Reduce padding for smaller screens */
+            }
+
+            .section-title {
+                font-size: 2rem;
+                /* Adjust title size for mobile */
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+                /* Adjust project title size */
+            }
+
+            .project-description {
+                font-size: 1rem;
+                /* Adjust description size */
+            }
+
+            .project-counter {
+                top: 10px;
+                /* Adjust position of the counter */
+                right: 10px;
+                font-size: 0.8rem;
+                /* Adjust font size */
+            }
+
+            .carousel-controls {
+                bottom: 10px;
+                /* Adjust position of controls */
+                gap: 10px;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                /* Adjust button size */
+                height: 40px;
+            }
+
+            .dot {
+                width: 10px;
+                /* Adjust dot size */
+                height: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -45,252 +402,170 @@
     </section>
 
     <!-- Projects Carousel Section - Single Project Per Slide -->
-    <section id="projects" class="projects-carousel">
-        <div class="mx-5">
-            <div class="section-title">
-                <h2 class="main-heading">Featured Projects</h2>
-                <p class="text-center fs-5">Explore our latest work across various technology domains</p>
+    <section class="showcase-section">
+        <div class="container-fluid">
+            <div class="section-header">
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">Discover our innovative solutions and cutting-edge projects that showcase
+                    our expertise in modern development</p>
             </div>
 
-            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="6"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="7"></button>
-                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="8"></button>
+            <div class="project-carousel-container ">
+                <div class="project-counter">
+                    <span id="currentSlide">01</span> / <span id="totalSlides">04</span>
                 </div>
 
-                <div class="carousel-inner">
-                    <!-- Slide 1 - E-Commerce Mobile App -->
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image ">
-                                        <img class="img-fluid" src="./images/project1.jpeg" alt="">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">E-Commerce Mobile App</h4>
-                                        <p class="text-muted">A comprehensive mobile application for online shopping
-                                            with advanced features like AR product preview and AI recommendations.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">React Native</span>
-                                            <span class="tech-badge">Node.js</span>
-                                            <span class="tech-badge">MongoDB</span>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="carousel-wrapper " id="carouselWrapper">
+                    <!-- Project 1 -->
+                    <div class="project-slide ">
+                        <div class="project-video ">
+                            <video muted loop autoplay>
+                                <source src="./images/project-videos/project-8.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"></div>
                             </div>
                         </div>
+                        <!-- <div class="project-info">
+                            <div class="project-category">Web Development</div>
+                            <h3 class="project-title">E-Commerce Platform</h3>
+                            <p class="project-description">
+                                A comprehensive e-commerce solution built with modern technologies, featuring real-time
+                                inventory management, secure payment processing, and intuitive user experience.
+                            </p>
+                            <ul class="project-features">
+                                <li>Responsive Design</li>
+                                <li>Real-time Analytics</li>
+                                <li>Secure Payments</li>
+                                <li>Mobile Optimized</li>
+                            </ul>
+                            <a href="#" class="project-link">
+                                View Project →
+                            </a>
+                        </div> -->
                     </div>
 
-                    <!-- Slide 2 - Business Analytics Dashboard -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image">
-                                        <img class="img-fluid" src="./images/Graphics client project/project2.jpeg"
-                                            alt="">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Business Analytics Dashboard</h4>
-                                        <p class="text-muted">Real-time business intelligence platform with interactive
-                                            charts, KPI tracking, and automated reporting features.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">React</span>
-                                            <span class="tech-badge">Python</span>
-                                            <span class="tech-badge">PostgreSQL</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Project 2 -->
+                    <div class="project-slide">
+                        <div class="project-video">
+                            <video muted loop autoplay>
+                                <source src="./images/project-videos/project-9.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"></div>
                             </div>
                         </div>
+                        <!-- <div class="project-info">
+                            <div class="project-category">Mobile App</div>
+                            <h3 class="project-title">AI-Powered Health App</h3>
+                            <p class="project-description">
+                                Revolutionary health tracking application with AI-driven insights, personalized
+                                recommendations, and seamless integration with wearable devices.
+                            </p>
+                            <ul class="project-features">
+                                <li>AI Recommendations</li>
+                                <li>Wearable Integration</li>
+                                <li>Health Insights</li>
+                                <li>Cross-Platform</li>
+                            </ul>
+                            <a href="#" class="project-link">
+                                View Project →
+                            </a>
+                        </div> -->
                     </div>
 
-                    <!-- Slide 3 - Learning Management System -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image">
-                                        <img src="./images/Graphics client project/project5.jpg" alt="">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Learning Management System</h4>
-                                        <p class="text-muted">Complete educational platform with video streaming, quiz
-                                            system, progress tracking, and certification management.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">Laravel</span>
-                                            <span class="tech-badge">Vue.js</span>
-                                            <span class="tech-badge">MySQL</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Project 3 -->
+                    <div class="project-slide">
+                        <div class="project-video">
+                            <video loop autoplay>
+                                <source src="./images/project-videos/project-4.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"></div>
                             </div>
                         </div>
+                        <!-- <div class="project-info">
+                            <div class="project-category">Web Application</div>
+                            <h3 class="project-title">Project Management Suite</h3>
+                            <p class="project-description">
+                                Comprehensive project management platform with team collaboration tools, advanced
+                                analytics, and workflow automation capabilities.
+                            </p>
+                            <ul class="project-features">
+                                <li>Team Collaboration</li>
+                                <li>Advanced Analytics</li>
+                                <li>Workflow Automation</li>
+                                <li>Resource Management</li>
+                            </ul>
+                            <a href="#" class="project-link">
+                                View Project →
+                            </a>
+                        </div> -->
                     </div>
 
-                    <!-- Slide 4 - Brand Identity Package -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image">
-                                        <img src="./images/Graphics client project/project6.jpg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Brand Identity Package</h4>
-                                        <p class="text-muted">Complete brand makeover including logo design, color
-                                            palette, typography, and marketing materials for a tech startup.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">Adobe Illustrator</span>
-                                            <span class="tech-badge">Photoshop</span>
-                                            <span class="tech-badge">Figma</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Project 4 -->
+                    <div class="project-slide">
+                        <div class="project-video">
+                            <video muted loop autoplay>
+                                <source src="./images/project-videos/project-1.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"></div>
                             </div>
                         </div>
+                        <!-- <div class="project-info">
+                            <div class="project-category">Data Analytics</div>
+                            <h3 class="project-title">Business Intelligence Dashboard</h3>
+                            <p class="project-description">
+                                Advanced business intelligence platform providing real-time insights, predictive
+                                analytics, and interactive data visualizations for informed decision making.
+                            </p>
+                            <ul class="project-features">
+                                <li>Real-time Insights</li>
+                                <li>Predictive Analytics</li>
+                                <li>Interactive Visualizations</li>
+                                <li>Custom Reports</li>
+                            </ul>
+                            <a href="#" class="project-link">
+                                View Project →
+                            </a>
+                        </div> -->
                     </div>
-
-                    <!-- Slide 5 - SEO Optimization Campaign -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image ">
-                                        <img src="./images/Graphics client project/project7.jpg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">SEO Optimization Campaign</h4>
-                                        <p class="text-muted">Comprehensive SEO strategy that increased organic traffic
-                                            by 300% and improved search rankings for 50+ keywords.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">Google Analytics</span>
-                                            <span class="tech-badge">SEMrush</span>
-                                            <span class="tech-badge">Schema Markup</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Project 5 -->
+                    <div class="project-slide">
+                        <div class="project-video">
+                            <video muted loop autoplay>
+                                <source src="./images/project-videos/project-3.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <div class="play-button"></div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Slide 6 - Social Media Campaign -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image">
-                                        <img src="./images/Graphics client project/project8.jpg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Social Media Campaign</h4>
-                                        <p class="text-muted">Creative social media graphics and video content that
-                                            boosted engagement rates by 250% across multiple platforms.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">After Effects</span>
-                                            <span class="tech-badge">Premiere Pro</span>
-                                            <span class="tech-badge">Canva Pro</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 7 - Cloud Migration Project -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image ">
-                                        <img src="./images/Graphics client project/project9.jpg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Cloud Migration Project</h4>
-                                        <p class="text-muted">Migrated enterprise infrastructure to AWS cloud with 99.9%
-                                            uptime, reducing costs by 40% and improving performance.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">AWS</span>
-                                            <span class="tech-badge">Docker</span>
-                                            <span class="tech-badge">Kubernetes</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 8 - Security Implementation -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image ">
-                                        <img src="./images/Graphics client project/project10.jpeg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Security Implementation</h4>
-                                        <p class="text-muted">Implemented comprehensive security measures including SSL,
-                                            firewall configuration, and DDoS protection for high-traffic websites.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">CloudFlare</span>
-                                            <span class="tech-badge">Let's Encrypt</span>
-                                            <span class="tech-badge">WAF</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 9 - Performance Optimization -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="">
-                                <div class="project-card-2">
-                                    <div class="project-image">
-                                        <img src="./images/Graphics client project/project11.jpg" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4 class="project-title">Performance Optimization</h4>
-                                        <p class="text-muted">Optimized website loading speeds from 8s to 1.2s through
-                                            CDN implementation, caching strategies, and code optimization.</p>
-                                        <div class="project-tech">
-                                            <span class="tech-badge">CDN</span>
-                                            <span class="tech-badge">Redis</span>
-                                            <span class="tech-badge">Nginx</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- <div class="project-info">
+                            <div class="project-category">Data Analytics</div>
+                            <h3 class="project-title">Business Intelligence Dashboard</h3>
+                            <p class="project-description">
+                                Advanced business intelligence platform providing real-time insights, predictive
+                                analytics, and interactive data visualizations for informed decision making.
+                            </p>
+                            <ul class="project-features">
+                                <li>Real-time Insights</li>
+                                <li>Predictive Analytics</li>
+                                <li>Interactive Visualizations</li>
+                                <li>Custom Reports</li>
+                            </ul>
+                            <a href="#" class="project-link">
+                                View Project →
+                            </a>
+                        </div> -->
                     </div>
                 </div>
 
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev project-carousel-2" type="button"
-                    data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next project-carousel-2" type="button"
-                    data-bs-target="#projectsCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">‹</button>
+                    <div class="carousel-dots" id="dotsContainer"></div>
+                    <button class="carousel-btn" id="nextBtn">›</button>
+                </div>
             </div>
         </div>
     </section>
@@ -324,6 +599,169 @@
         //         navbar.style.backgroundColor = '';
         //     }
         // });
+    </script>
+    <script>
+        // autoPlay() {
+        //     this.autoPlayInterval = setInterval(() => {
+        //         this.nextSlide();
+        //     }, 5000); // Change slide every 5 seconds
+        // }
+        class ProjectCarousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.slides = document.querySelectorAll('.project-slide');
+                this.totalSlides = this.slides.length;
+                this.carouselWrapper = document.getElementById('carouselWrapper');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.dotsContainer = document.getElementById('dotsContainer');
+                this.currentSlideSpan = document.getElementById('currentSlide');
+                this.totalSlidesSpan = document.getElementById('totalSlides');
+
+                this.init();
+            }
+            autoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 7000); // Change slide every 7 seconds
+            }
+            init() {
+                this.createDots();
+                this.updateCounter();
+                this.bindEvents();
+                this.autoPlay();
+                this.handleVideoPlayback();
+            }
+
+            createDots() {
+                for (let i = 0; i < this.totalSlides; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.dotsContainer.appendChild(dot);
+                }
+            }
+
+            updateCounter() {
+                this.currentSlideSpan.textContent = String(this.currentSlide + 1).padStart(2, '0');
+                this.totalSlidesSpan.textContent = String(this.totalSlides).padStart(2, '0');
+            }
+
+            bindEvents() {
+                this.prevBtn.addEventListener('click', () => this.previousSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+            }
+
+            goToSlide(index) {
+                this.currentSlide = index;
+                const translateX = -this.currentSlide * 100;
+                this.carouselWrapper.style.transform = `translateX(${translateX}%)`;
+
+                // Update dots
+                document.querySelectorAll('.dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === this.currentSlide);
+                });
+
+                this.updateCounter();
+                this.resetAutoPlay();
+            }
+
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.goToSlide(this.currentSlide);
+            }
+
+            previousSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.goToSlide(this.currentSlide);
+            }
+
+            // autoPlay() {
+            //     this.autoPlayInterval = setInterval(() => {
+            //         this.nextSlide();
+            //     }, 5000);
+            // }
+
+            resetAutoPlay() {
+                clearInterval(this.autoPlayInterval);
+                this.autoPlay();
+            }
+
+            handleVideoPlayback() {
+                const videos = document.querySelectorAll('video');
+                const playButtons = document.querySelectorAll('.play-button');
+
+                playButtons.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        const video = videos[index];
+                        if (video.paused) {
+                            video.play();
+                            button.style.opacity = '0';
+                        } else {
+                            video.pause();
+                            button.style.opacity = '1';
+                        }
+                    });
+                });
+
+                videos.forEach((video, index) => {
+                    // Pause autoplay when video is hovered
+                    video.addEventListener('mouseenter', () => {
+                        clearInterval(this.autoPlayInterval);
+                    });
+
+                    // Resume autoplay when hover is removed
+                    video.addEventListener('mouseleave', () => {
+                        this.resetAutoPlay();
+                    });
+
+                    video.addEventListener('play', () => {
+                        clearInterval(this.autoPlayInterval);
+                    });
+
+                    video.addEventListener('pause', () => {
+                        this.resetAutoPlay();
+                    });
+
+                    video.addEventListener('ended', () => {
+                        playButtons[index].style.opacity = '1';
+                        this.resetAutoPlay();
+                    });
+                });
+            }
+        }
+
+        // Initialize carousel when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ProjectCarousel();
+        });
+
+        // Add smooth scrolling and intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.section-header, .carousel-container');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(el);
+            });
+        });
     </script>
     <script src="./js/main.js"></script>
 </body>
