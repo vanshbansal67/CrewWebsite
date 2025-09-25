@@ -11,7 +11,7 @@
 
     <style>
         .showcase-section {
-            padding: 80px 20px;
+            padding: 20px 10px;
             background: linear-gradient(135deg, #0a0a0a 0%, #12124f 50%, #16213e 100%);
             position: relative;
             min-height: 100vh;
@@ -29,22 +29,22 @@
             pointer-events: none;
         }
 
-        .container {
+        .container-fluid {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: 0 0;
             position: relative;
             z-index: 1;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            /* margin-bottom: 60px; */
         }
 
         .section-title {
             font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 1.2rem;
             background: linear-gradient(135deg, #fff 0%, #22c55e 50%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -79,13 +79,14 @@
             position: relative;
             /* display: flex; */
             align-items: center;
-            padding: 60px;
-            gap: 60px;
+            margin: 30px 10px;
+            /* gap: 60px; */
         }
 
         .project-video {
             flex: 1;
             position: relative;
+            margin: 20px 0;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -283,13 +284,15 @@
         }
 
         @media (max-width: 768px) {
-            .showcase-section{
-                 height:auto;
+            .showcase-section {
+                /* max-height: 70vh; */
+                min-height: auto;
             }
+
             .project-slide {
                 flex-direction: row;
                 /* Stack content vertically */
-                padding: 20px;
+                padding: 1.2rem;
                 /* Adjust padding for smaller screens */
                 /* gap: 20px; */
             }
@@ -298,6 +301,7 @@
                 width: 100%;
                 /* Make the video take full width */
                 height: 100%;
+                margin-bottom: 30px;
                 /* Maintain aspect ratio */
             }
 
@@ -321,13 +325,14 @@
                 /* Stack slides vertically if needed */
             }
 
-            .carousel-container {
+            .carousel-controls {
                 padding: 10px;
                 /* Reduce padding for smaller screens */
             }
 
             .section-title {
                 font-size: 2rem;
+                padding-top: 20px;
                 /* Adjust title size for mobile */
             }
 
@@ -342,15 +347,17 @@
             }
 
             .project-counter {
-                top: 10px;
+                display: none;
+                top: 5px;
                 /* Adjust position of the counter */
-                right: 10px;
+                right: 5px;
                 font-size: 0.8rem;
                 /* Adjust font size */
             }
 
             .carousel-controls {
-                bottom: 10px;
+                bottom: 5px;
+                /* padding-bottom: 30px; */
                 /* Adjust position of controls */
                 gap: 10px;
             }
