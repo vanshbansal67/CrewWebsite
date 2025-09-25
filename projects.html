@@ -283,6 +283,7 @@
             color: #94a3b8;
         }
 
+
         @media (max-width: 768px) {
             .showcase-section {
                 /* max-height: 70vh; */
@@ -301,7 +302,7 @@
                 width: 100%;
                 /* Make the video take full width */
                 height: 100%;
-                margin-bottom: 4rem;
+                /* margin-bottom: 4rem; */
                 /* Maintain aspect ratio */
             }
 
@@ -374,6 +375,11 @@
                 /* Adjust dot size */
                 height: 10px;
             }
+
+            .hero-section-project {
+                /* max-height: 70vh;
+                max-width: 768px; */
+            }
         }
     </style>
 </head>
@@ -392,7 +398,7 @@
                             graphic design, SEO optimization, and hosting services. Each project represents
                             our commitment to excellence and innovation.
                         </p>
-                        <div class="d-flex justify-content-center gap-3">
+                        <div class="d-flex parent-badge ustify-content-center gap-3">
                             <span class="badge bg-light text-dark p-2 fs-5">
                                 <i class="fas fa-laptop-code me-2 "></i>Software Development
                             </span>
@@ -666,7 +672,7 @@
 
             goToSlide(index) {
                 this.currentSlide = index;
-                const translateX = -this.currentSlide * 100;
+                const translateX = -this.currentSlide * 103;
                 this.carouselWrapper.style.transform = `translateX(${translateX}%)`;
 
                 // Update dots
