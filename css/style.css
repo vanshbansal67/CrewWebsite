@@ -41,7 +41,6 @@ canvas {
 }
 
 /* Navbar Styles */
-/* Navbar Styles */
 .navbar {
   position: fixed;
   /* top: 1rem; */
@@ -1270,8 +1269,6 @@ footer .copyright {
   background: transparent;
   padding: 40px 20px;
   background: transparent;
-  /* paddi 20px; */
-  /* margin: 40px 0; */
 }
 
 .faq-title {
@@ -1408,7 +1405,6 @@ footer .copyright {
 .contact-icon {
   width: 50px;
   height: 50px;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background-color: #1C1453;
   border-radius: 50%;
   display: flex;
@@ -1438,7 +1434,6 @@ footer .copyright {
 }
 
 .contact-btn {
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background-color: #1C1453;
   border: none;
   color: white;
@@ -2193,22 +2188,18 @@ footer .copyright {
 @media (max-width: 480px) {
   .project-card-2 {
     width: 95%;
-    /* Further reduce width for very small screens */
   }
 
   .project-image {
     height: 150px;
-    /* Further reduce image height */
   }
 
   .project-title {
     font-size: 1rem;
-    /* Smaller title font size */
   }
 
   .tech-badge {
     font-size: 0.6rem;
-    /* Smaller badge font size */
     padding: 0.1rem 0.5rem;
   }
 }

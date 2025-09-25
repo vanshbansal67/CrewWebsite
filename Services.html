@@ -193,30 +193,30 @@
     <!-- Custom JavaScript -->
     <script>
         // Add interactive hover effects
-        const cards = document.querySelectorAll('.feature-card');
+        // const cards = document.querySelectorAll('.feature-card');
 
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-15px) scale(1.03)';
-                this.style.zIndex = '10';
-            });
+        // cards.forEach(card => {
+        //     card.addEventListener('mouseenter', function () {
+        //         this.style.transform = 'translateY(-15px) scale(1.03)';
+        //         this.style.zIndex = '10';
+        //     });
 
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.zIndex = '1';
-            });
-        });
+        //     card.addEventListener('mouseleave', function () {
+        //         this.style.transform = 'translateY(0) scale(1)';
+        //         this.style.zIndex = '1';
+        //     });
+        // });
 
-        // Add subtle parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const cards = document.querySelectorAll('.feature-card');
+        // // Add subtle parallax effect
+        // window.addEventListener('scroll', () => {
+        //     const scrolled = window.pageYOffset;
+        //     const cards = document.querySelectorAll('.feature-card');
 
-            cards.forEach((card, index) => {
-                const speed = 0.1 + (index * 0.02);
-                card.style.transform = `translateY(${scrolled * speed}px)`;
-            });
-        });
+        //     cards.forEach((card, index) => {
+        //         const speed = 0.1 + (index * 0.02);
+        //         card.style.transform = `translateY(${scrolled * speed}px)`;
+        //     });
+        // });
     </script>
     <script src="./js/main.js"></script>
 </body>
