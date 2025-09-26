@@ -754,6 +754,7 @@ footer {
 }
 
 footer .social-icons img {
+  margin: 1rem 1rem;
   height: 40px;
   transition: transform 0.3s ease;
 }
@@ -822,7 +823,10 @@ footer .copyright {
     order: 2;
     /* Move social icons below footer navigation */
     margin-top: 1rem;
+    /* margin-left: 2rem; */
   }
+
+
 
   footer .footer-nav {
     order: 1;
@@ -1535,6 +1539,9 @@ footer .copyright {
   }
 
 
+  .map-container {
+    margin-top: 2rem;
+  }
 
   .contact-icon {
     margin-right: 0;
@@ -1865,7 +1872,7 @@ footer .copyright {
 
 #services-page-3 {
   height: 90vh;
-  background-color: white;
+  background-color: black;
 }
 
 
@@ -2266,7 +2273,7 @@ footer .copyright {
 
 @media (max-width:768px) {
   #hero-text {
-    margin-top: 3rem;
+    margin-top: 10rem;
     min-height: 50vh;
   }
 
@@ -2358,6 +2365,11 @@ footer .copyright {
     right: 0;
 
   }
+
+  .values-section {
+    margin: 0 -1rem;
+    padding: 3rem 1rem;
+  }
 }
 
 .left {
@@ -2385,4 +2397,69 @@ footer .copyright {
 .process {
   padding: 40px 20px;
   background-color: #f9f9f9;
+}
+
+/* Values Section */
+.values-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin: 0 -2rem;
+  padding: 2rem 2rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.value-card:hover::before {
+  left: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.value-icon {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e155a;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
 }

@@ -32,13 +32,15 @@
   display: flex;
   justify-content: center;
   margin-top: 9rem;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  /* flex-wrap: nowrap; */
 }
+
+
 
 .social-icons-contact img {
   height: 40px;
-  margin: 1rem 1vw;
+  margin: 1rem 1rem;
 }
 
 .cosmic-content-container {
@@ -270,9 +272,13 @@
 }
 
 @media (max-width: 768px) {
+  #hero_section {
+    min-height: 50vh;
+  }
+
   .form-container {
-    margin: 20px;
-    padding: 30px 20px;
+    margin: 1.2rem;
+    padding: 1.2rem 1rem;
   }
 
   .form-header h2 {
@@ -281,6 +287,20 @@
 
   .optional-label {
     font-size: 1.5rem;
+  }
+
+  .social-icons-contact {
+    margin-top: 1rem;
+
+  }
+
+  .social-icons-contact img {
+    height: 40px;
+    margin: 1rem 0.5rem;
+  }
+
+  #hero-text {
+    margin: 1rem 1rem;
   }
 }
 
