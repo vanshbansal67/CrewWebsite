@@ -1571,15 +1571,15 @@ footer .copyright {
   text-align: center;
 }
 
-.hero-content {
+.hero-content-services {
   position: relative;
   z-index: 2;
   color: white;
   margin-top: 14rem;
-  width: 50vw;
+  width: 70vw;
 }
 
-.hero-content h1 {
+.hero-content-services h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   /* Responsive font size */
   font-weight: bold;
@@ -1593,12 +1593,12 @@ footer .copyright {
     padding: 3rem 1rem;
   }
 
-  .hero-content {
+  .hero-content-services {
     margin-top: 10rem;
     width: 70vw;
   }
 
-  .hero-content h1 {
+  .hero-content-services h1 {
     font-size: 2.5rem;
     /* Adjust font size for tablets */
   }
@@ -1610,12 +1610,12 @@ footer .copyright {
     min-height: 50vh;
   }
 
-  .hero-content {
+  .hero-content-services {
     margin-top: 2rem;
     width: 90vw;
   }
 
-  .hero-content h1 {
+  .hero-content-services h1 {
     font-size: 2rem;
     /* Adjust font size for mobile */
   }
@@ -1626,12 +1626,12 @@ footer .copyright {
     padding: 1.5rem 1rem;
   }
 
-  .hero-content {
+  .hero-content-services {
     margin-top: 2rem;
     width: 100%;
   }
 
-  .hero-content h1 {
+  .hero-content-services h1 {
     font-size: 1.8rem;
     /* Smaller font size for very small screens */
   }
